@@ -1,0 +1,173 @@
+// Typography
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Big+Shoulders&display=swap");
+
+$font-big-shoulder: 'Big Shoulders Display', sans-serif;
+$font-lexend-deca: "Lexend Deca", sans-serif;
+
+// Breakpoints
+$media_queries : (
+    'mobile'    : unquote("only screen and (max-width: 375px)"),
+    'desktop'   : unquote("only screen and (min-width: 1024px)"),
+    'landscape' : unquote("screen and (orientation:landscape)"),    
+    'portrait'  : unquote("screen and (orientation:portrait)")
+);
+
+@mixin for_breakpoint($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        // If the key exists in the map
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+
+}
+
+// Colors
+$primary-orange: hsl(31, 77%, 52%);
+$primary-dark-cyan: hsl(184, 100%, 22%);
+$primary-very-dark-cyan: hsl(179, 100%, 13%);
+
+$neutral-transparent: hsla(0, 0%, 100%, 0.75);
+$neutral-light-gray:  hsl(0, 0%, 95%);
+
+@mixin article-button($btn-text-color) {
+    background-color: $neutral-light-gray;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    color:  $btn-text-color;
+
+    &:hover {
+        background-color: $btn-text-color;
+        border: 1px solid $neutral-light-gray;
+        color: $neutral-light-gray;
+    }
+
+    @include for_breakpoint(mobile) {
+        font-size: .8rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: $neutral-transparent;
+}
+
+.container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 10rem 12rem;
+    position: relative;
+
+    @include for_breakpoint(mobile) {
+        width:100%;
+        flex-flow: column;
+        padding: 50px 15px;
+    }
+}
+
+p {
+    font-size: .8rem;
+    color: $neutral-transparent;
+    line-height: 2;
+
+    @include for_breakpoint(mobile) {
+        font-size: .7rem;
+    }
+}
+
+p,
+.btn-article {
+    font-family: $font-lexend-deca;
+}
+
+.article-title {
+    font-family: $font-big-shoulder;
+    font-weight: 700;
+    font-size: 2rem;
+    color: $neutral-light-gray;
+
+    @include for_breakpoint(mobile) {
+        font-size: 1.5rem;
+    }
+}
+
+.article {
+    padding: 3em 3em 3em;
+    height: auto;
+    min-height: 30rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+    .main-article {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        min-height: 70%;
+
+        @include for_breakpoint(mobile) {
+            width: 100%;
+            min-height: 15rem;
+        }
+    }
+
+    
+    @include for_breakpoint(mobile) {
+        width: 100%;
+        min-height: 25rem;
+    }
+}
+
+.sedan {
+    background-color: $primary-orange;
+    border-radius: 10px 0 0 10px;
+
+    .btn-article {
+        @include article-button($primary-orange)
+    }
+
+    @include for_breakpoint(mobile) {
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+.suv {
+    background-color: $primary-dark-cyan;
+    
+    .btn-article {
+        @include article-button($primary-dark-cyan)
+    }    
+}
+
+.luxury {
+    background-color: $primary-very-dark-cyan;
+    border-radius: 0 10px 10px 0;
+    
+    .btn-article {
+        @include article-button($primary-very-dark-cyan)
+    }
+
+    @include for_breakpoint(mobile) {
+        border-radius: 0 0 10px 10px;
+    }
+}
+
+

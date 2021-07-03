@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Big+Shoulders&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  padding: 10rem 12rem;
+  position: relative;
+}
+@media only screen and (max-width: 375px) {
+  .container {
+    width: 100%;
+    flex-flow: column;
+    padding: 50px 15px;
+  }
+}
+
+p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 2;
+}
+@media only screen and (max-width: 375px) {
+  p {
+    font-size: 0.7rem;
+  }
+}
+
+p,
+.btn-article {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.article-title {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #f2f2f2;
+}
+@media only screen and (max-width: 375px) {
+  .article-title {
+    font-size: 1.5rem;
+  }
+}
+
+.article {
+  padding: 3em 3em 3em;
+  height: auto;
+  min-height: 30rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.article .main-article {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  min-height: 70%;
+}
+@media only screen and (max-width: 375px) {
+  .article .main-article {
+    width: 100%;
+    min-height: 15rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .article {
+    width: 100%;
+    min-height: 25rem;
+  }
+}
+
+.sedan {
+  background-color: #e38826;
+  border-radius: 10px 0 0 10px;
+}
+.sedan .btn-article {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #e38826;
+}
+.sedan .btn-article:hover {
+  background-color: #e38826;
+  border: 1px solid #f2f2f2;
+  color: #f2f2f2;
+}
+@media only screen and (max-width: 375px) {
+  .sedan .btn-article {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .sedan {
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.suv {
+  background-color: #006970;
+}
+.suv .btn-article {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #006970;
+}
+.suv .btn-article:hover {
+  background-color: #006970;
+  border: 1px solid #f2f2f2;
+  color: #f2f2f2;
+}
+@media only screen and (max-width: 375px) {
+  .suv .btn-article {
+    font-size: 0.8rem;
+  }
+}
+
+.luxury {
+  background-color: #004241;
+  border-radius: 0 10px 10px 0;
+}
+.luxury .btn-article {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #004241;
+}
+.luxury .btn-article:hover {
+  background-color: #004241;
+  border: 1px solid #f2f2f2;
+  color: #f2f2f2;
+}
+@media only screen and (max-width: 375px) {
+  .luxury .btn-article {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .luxury {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
