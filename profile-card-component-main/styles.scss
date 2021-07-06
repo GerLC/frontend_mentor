@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;700&display=swap');
+
+// Color
+
+$primary-dark-cyan:hsl(185, 75%, 39%);
+$primary-very-dark-cyan:hsl(229, 23%, 23%);
+$primary-dark-grayish: hsl(227, 10%, 46%);
+
+$neutral-gray: hsl(0, 0%, 59%);
+
+// Typography
+$font: 'Kumbh Sans', sans-serif;
+
+// Breakpoints
+$media_queries : (
+    'mobile'    : unquote("only screen and (max-width: 375px)"),
+    'desktop'   : unquote("only screen and (min-width: 1024px)"),
+    'landscape' : unquote("screen and (orientation:landscape)"),    
+    'portrait'  : unquote("screen and (orientation:portrait)")
+);
+
+@mixin for_breakpoint($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        // If the key exists in the map
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: $font;
+    color: $neutral-gray;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    background-color: $primary-dark-cyan;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    padding: 2em 1em;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 150%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 0;
+    }
+
+    &::before {
+        background-image: url(../images/bg-pattern-top.svg);
+        top: 25rem;
+        left: 5rem;
+
+        @include for_breakpoint(desktop) {
+            left: 35rem;
+            top: 20rem;
+        }
+
+    }
+
+    &::after{
+        background-image: url(../images/bg-pattern-bottom.svg);
+        top: -37rem;
+        left: -5rem;
+        background-color: #19a2ae;
+        transform: scaleX(-1);
+
+        @include for_breakpoint(desktop) {
+            left: -25rem;
+        }
+
+    }
+}
+
+
+.card {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 15px 0 $primary-very-dark-cyan;
+    z-index: 9999;
+
+    @include for_breakpoint(desktop){
+        width: 28%;
+    }
+
+    .card-header {
+        background-image: url(../images/bg-pattern-card.svg);
+        background-position: initial;
+        background-size: cover;
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        min-height: 8rem;
+        display: flex;
+        justify-content: center;
+
+        .card-image {
+            position: absolute;
+            top: 20%;
+
+            img {
+                border-radius: 50%;
+                box-shadow: 0 0 0 5px #fff;
+            }
+        }        
+    }
+
+    .card-content,
+    .card-footer {
+        padding: .5em;
+    }
+
+    .card-content {
+        margin-top: 3em;
+        border-bottom: 1px solid $neutral-gray;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        line-height: 1.8;
+
+        .username {
+            font-size: 1rem;
+
+            strong {
+                color: $primary-very-dark-cyan;
+            }
+        }
+
+        .location {
+            font-size: .8rem;
+        }
+    }
+
+    .card-footer {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 1.5em 2em;
+        line-height: 1.5;
+
+        .stat {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            font-size: .65rem;
+        }
+        .stat-num {
+            font-weight: 700;
+            font-size: 1rem;
+            color: $primary-very-dark-cyan;
+        }
+    }
+}
+
