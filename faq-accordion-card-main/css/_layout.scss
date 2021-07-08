@@ -1,0 +1,208 @@
+// Breakpoints
+$media_queries : (
+    'mobile'    : unquote("only screen and (max-width: 375px)"),
+    'desktop'   : unquote("only screen and (min-width: 1024px)"),
+    'landscape' : unquote("screen and (orientation:landscape)"),    
+    'portrait'  : unquote("screen and (orientation:portrait)")
+);
+
+@mixin for_breakpoint($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        // If the key exists in the map
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+
+}
+
+// Mixins?
+@mixin apply-transition($name, $duration, $property: ease-in-out) {
+    transition: $name #{$duration}s $property;
+    -moz-transition: $name #{$duration}s $property; /* Firefox 4 */
+    -webkit-transition: $name #{$duration}s $property; /* Safari and Chrome */
+    -o-transition: $name #{$duration}s $property; /* Opera */
+    -ms-transition: $name #{$duration}s $property; /* Explorer 10 */
+}
+
+// Placeholders
+%apply-flex {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+
+    @include for_breakpoint(desktop) {
+        padding: 2rem 20rem;
+    }
+}
+
+
+.icon-box {
+    display: none;
+
+    @include for_breakpoint(desktop) {
+        display: block;
+        position: absolute;
+        top: 28rem;
+        left: 12rem;    
+        z-index: 1;
+    }
+}
+
+.main {
+    @extend %apply-flex;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 10px 100px 0 $primary-text-very-dark-blue;
+    padding: 2rem 1.5rem;
+
+    @include for_breakpoint(desktop) {
+        width: 100%;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 6.5rem 6rem;
+        overflow: hidden;
+    }
+}
+
+.faq-icon {
+    position: relative;
+    margin-bottom: 9.5rem;
+
+    @include for_breakpoint(desktop) {
+        flex: 50%;
+    }
+    
+    .icon {
+        display: flex;
+        flex-flow: column;
+
+        &__img {
+            position: absolute;
+
+            &--primary {
+                top: -11rem;
+                left: -12rem;
+
+                @include for_breakpoint(desktop) {
+                    content: url(../images/illustration-woman-online-desktop.svg);
+                    left: -15rem;
+                    top: -12rem;
+                }
+            }
+
+            &--secondary {
+                top: -2rem;
+                left: -9.5rem;
+
+                @include for_breakpoint(desktop) {
+                    content: url(../images/bg-pattern-desktop.svg);
+                    left: -56rem;
+                    top: -42rem;
+                }
+            }
+        }
+    }
+}
+
+.faq {
+    position: relative;
+    @extend %apply-flex;
+
+    @include for_breakpoint(desktop) {
+        align-items: initial;
+        flex: 50%;
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+
+        @include for_breakpoint(desktop) {
+            font-size: 2.8rem;
+        }
+    }
+
+    &__content {
+        @extend %apply-flex;
+        margin-bottom: 1.5rem;
+    }
+
+    &__subtitle {
+        @extend %apply-flex;
+        align-items: flex-start;
+        padding: 5px 0;
+        width: 100%;
+        border-bottom: 1px solid $neutral-divider-light-blue;
+    }
+
+    &__button {
+        width: 100%;
+        border: none;
+        background-color: #fff;
+        font-size: .9rem;
+        color: $neutral-text-very-dark-blue;
+        cursor: pointer;
+        padding: 1rem;
+        outline: none;
+        text-align: left;
+
+        @include for_breakpoint(desktop) {
+            font-size: 1rem;
+        }
+
+        &--highlight {
+            color: $primary-text-very-dark-blue;
+            font-weight: 700;
+
+            &::after {
+                transform: rotate(-180deg);
+            }
+        }
+
+        &::after {
+            content: url(../images/icon-arrow-down.svg);
+            float: right;
+            margin-left: 5px;
+            color: $primary-text-soft-red;
+            @include apply-transition(transform, .3, ease-in-out)
+        }
+    }
+
+    &__panel {
+        width: 100%;
+        max-height: 0;
+        line-height: 1.5;
+        overflow: hidden;
+        padding: 0 1rem;
+        font-size: .8rem;
+        color: $neutral-text-dark-blue;
+        @include apply-transition(max-height, .5, ease-out);
+
+        @include for_breakpoint(desktop) {
+            font-size: 1rem;
+        }
+
+        &--expanded {
+            max-height: 10rem;
+        }
+    }
+}

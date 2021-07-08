@@ -1,0 +1,9 @@
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+    background: linear-gradient(
+        $background-soft-violet,
+        $background-soft-blue
+    ) no-repeat;
+}
