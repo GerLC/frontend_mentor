@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7)) no-repeat;
+  background: linear-gradient(#af67e9, #6565e7) no-repeat;
+}
+
+.main, .faq, .faq__content, .faq__subtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    padding: 2rem 20rem;
+  }
+}
+
+.icon-box {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .icon-box {
+    display: block;
+    position: absolute;
+    top: 28rem;
+    left: 12rem;
+    z-index: 1;
+  }
+}
+
+.main {
+  background: #fff;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 10px 100px 0 #1d1e35;
+          box-shadow: 0px 10px 100px 0 #1d1e35;
+  padding: 2rem 1.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .main {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 6.5rem 6rem;
+    overflow: hidden;
+  }
+}
+
+.faq-icon {
+  position: relative;
+  margin-bottom: 9.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .faq-icon {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+  }
+}
+
+.faq-icon .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.faq-icon .icon__img {
+  position: absolute;
+}
+
+.faq-icon .icon__img--primary {
+  top: -11rem;
+  left: -12rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .faq-icon .icon__img--primary {
+    content: url(../images/illustration-woman-online-desktop.svg);
+    left: -15rem;
+    top: -12rem;
+  }
+}
+
+.faq-icon .icon__img--secondary {
+  top: -2rem;
+  left: -9.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .faq-icon .icon__img--secondary {
+    content: url(../images/bg-pattern-desktop.svg);
+    left: -56rem;
+    top: -42rem;
+  }
+}
+
+.faq {
+  position: relative;
+}
+
+@media only screen and (min-width: 1024px) {
+  .faq {
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+  }
+}
+
+.faq__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .faq__title {
+    font-size: 2.8rem;
+  }
+}
+
+.faq__content {
+  margin-bottom: 1.5rem;
+}
+
+.faq__subtitle {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 5px 0;
+  width: 100%;
+  border-bottom: 1px solid #e7e7e9;
+}
+
+.faq__button {
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  font-size: .9rem;
+  color: #4a4b5e;
+  cursor: pointer;
+  padding: 1rem;
+  outline: none;
+  text-align: left;
+}
+
+@media only screen and (min-width: 1024px) {
+  .faq__button {
+    font-size: 1rem;
+  }
+}
+
+.faq__button--highlight {
+  color: #1d1e35;
+  font-weight: 700;
+}
+
+.faq__button--highlight::after {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.faq__button::after {
+  content: url(../images/icon-arrow-down.svg);
+  float: right;
+  margin-left: 5px;
+  color: #f47c57;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  /* Firefox 4 */
+  -webkit-transition: transform 0.3s ease-in-out;
+  /* Safari and Chrome */
+  -o-transition: transform 0.3s ease-in-out;
+  /* Opera */
+  -ms-transition: transform 0.3s ease-in-out;
+  /* Explorer 10 */
+}
+
+.faq__panel {
+  width: 100%;
+  max-height: 0;
+  line-height: 1.5;
+  overflow: hidden;
+  padding: 0 1rem;
+  font-size: .8rem;
+  color: #787887;
+  transition: max-height 0.5s ease-out;
+  -moz-transition: max-height 0.5s ease-out;
+  /* Firefox 4 */
+  -webkit-transition: max-height 0.5s ease-out;
+  /* Safari and Chrome */
+  -o-transition: max-height 0.5s ease-out;
+  /* Opera */
+  -ms-transition: max-height 0.5s ease-out;
+  /* Explorer 10 */
+}
+
+@media only screen and (min-width: 1024px) {
+  .faq__panel {
+    font-size: 1rem;
+  }
+}
+
+.faq__panel--expanded {
+  max-height: 10rem;
+}
+/*# sourceMappingURL=main.css.map */
