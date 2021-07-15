@@ -5,13 +5,14 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 
 | Tags  | Challanges | Live|  Code|  Type| 
 | --- | :---: |  -- | --  |  -- |
-| HTML--CSS      |  3-column-preview-card-component-main | [Live](https://gerlc.github.io/frontend_mentor/3-column-preview-card-component-main) | [Code](https://github.com/GerLC/frontend_mentor/3-column-preview-card-component-main) |Free|
-| HTML--CSS      |  profile-card-component-main | [Live](https://gerlc.github.io/frontend_mentor/profile-card-component-main) | [Code](https://github.com/GerLC/frontend_mentor/profile-card-component-main) |Free|
-| HTML--CSS      |  single-price-grid-component-master | [Live](https://gerlc.github.io/frontend_mentor/single-price-grid-component-master) | [Code](https://github.com/GerLC/frontend_mentor/single-price-grid-component-master) |Free|
-| HTML--CSS--JS  |  faq-accordion-card-main | [Live](https://gerlc.github.io/frontend_mentor/faq-accordion-card-mai) | [Code](https://github.com/GerLC/frontend_mentor/faq-accordion-card-main) |Free|
+| HTML--CSS      |  3-column-preview-card-component-main | [Live](https://gerlc.github.io/frontend_mentor/3-column-preview-card-component-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/3-column-preview-card-component-main) |Free|
+| HTML--CSS      |  profile-card-component-main | [Live](https://gerlc.github.io/frontend_mentor/profile-card-component-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/profile-card-component-main) |Free|
+| HTML--CSS      |  single-price-grid-component-master | [Live](https://gerlc.github.io/frontend_mentor/single-price-grid-component-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/single-price-grid-component-master) |Free|
+| HTML--CSS      |  article-preview-component-master | [Live](https://gerlc.github.io/frontend_mentor/article-preview-component-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/article-preview-component-master) |Free|
+| HTML--CSS--JS  |  faq-accordion-card-main | [Live](https://gerlc.github.io/frontend_mentor/faq-accordion-card-mai) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/faq-accordion-card-main) |Free|
 
 ### Junior
 
 | Tags  | Challanges | Live|  Code|  Type| 
 | --- | :---: |  -- | --  |  -- |
-| HTML--CSS--JS   | sunnyside-agency-landing-page-main | [Live](https://gerlc.github.io/frontend_mentor/sunnyside-agency-landing-page-main) | [Code](https://github.com/GerLC/frontend_mentor/sunnyside-agency-landing-page-main) |Free|
+| HTML--CSS--JS   | sunnyside-agency-landing-page-main | [Live](https://gerlc.github.io/frontend_mentor/sunnyside-agency-landing-page-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/sunnyside-agency-landing-page-main) |Free|
