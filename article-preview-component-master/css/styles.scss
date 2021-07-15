@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+$dark-grayish-blue: hsl(217, 19%, 35%);
+$dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+$media_queries : (
+    'mobile'    : unquote("only screen and (max-width: 375px)"),
+    'desktop'   : unquote("only screen and (min-width: 1024px)"),
+    'landscape' : unquote("screen and (orientation:landscape)"),    
+    'portrait'  : unquote("screen and (orientation:portrait)")
+);
+
+@mixin for_breakpoint($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        // If the key exists in the map
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 13px;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    padding: 5rem 2rem;
+    background: $light-grayish-blue;
+    display: flex;
+}
+
+main {
+    margin: auto;
+}
+
+.card {
+    width: 100%;
+    max-width: 50rem;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    flex-flow: column;
+    box-shadow: 0rem 1rem 4rem -3rem $dark-grayish-blue;
+
+    @include for_breakpoint(desktop) {
+        display: grid;
+        grid-template-columns: 250px auto;
+    }
+
+    &__image {
+
+        @include for_breakpoint(desktop) {
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        img {
+            border-radius: 10px 10px 0 0;
+            max-width: 100%;
+            min-height: 100%;
+            background-size: cover;
+            background-color: $light-grayish-blue;
+
+            @include for_breakpoint(desktop) {
+                border-radius: 10px 0 0 10px;
+
+            }
+        }
+
+    }
+
+    &__content {
+        padding: 2rem 1.5rem 1rem;
+
+        @include for_breakpoint(desktop) {
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+        
+        h1 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: .9rem;
+            color: $dark-grayish-blue;
+        }
+
+    }
+
+
+    &__profile {
+        width: 100%;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include for_breakpoint(desktop) {
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .user-info {
+            display: flex;
+            flex-flow: row;
+            line-height: 1.7;
+            
+            img {
+                background-color: $light-grayish-blue;
+                border-radius: 50%;
+                max-width: 20%;
+                max-height: 20%;
+                margin-right: 1rem;
+            }
+            
+            p {
+                color: $dark-grayish-blue;
+                font-weight: 700;
+            }
+            
+            time {
+                color: $grayish-blue;
+            }
+        }
+        
+        .share {
+            width: 80%;
+            display: flex;
+            background: $dark-grayish-blue;
+            
+            flex-flow: row;
+            align-items: center;
+            
+            p {
+                color: $grayish-blue;
+                letter-spacing: .5rem;
+                margin-right: 1rem;
+                font-size: .9rem;
+            }
+
+            ul {
+                width: 40%;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+        }
+        
+        &--shown {
+            background: $dark-grayish-blue;
+            border-radius: 0 0 10px 10px;
+
+            .user-info {
+                display: none;
+            }
+
+            .share {
+                display: flex;
+            }
+
+            .share-desktop {
+                display: none;
+            }
+
+            @include for_breakpoint(desktop) {
+                background: initial;
+    
+                .user-info {
+                    display: flex;
+                }
+    
+                .share {
+                    display: none;
+                }
+
+                .share-desktop {
+                    width: 20%;
+                    max-width: 18rem;
+                    position: fixed;
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    z-index: 99;
+                    background: $dark-grayish-blue;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    margin: 0 0 10rem 16.7rem;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        border-left: 20px solid transparent;
+                        border-right: 20px solid transparent;
+                        border-top: 20px solid $dark-grayish-blue;
+                        bottom: -1rem;
+                    }
+
+                    p {
+                        color: $grayish-blue;
+                        letter-spacing: .5rem;
+                        margin-right: 1rem;
+                        font-size: .9rem;
+                    }
+        
+                    ul {
+                        width: 50%;
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: space-evenly;
+                        align-items: center;
+                    }
+
+                }
+            }
+        }
+
+        &--hidden {
+            background: initial;
+
+            .user-info {
+                display: flex;
+            }
+
+            .share {
+                display: none;
+            }
+
+            .share-desktop {
+                display: none;
+            }
+        }
+
+        button {
+            background-color: $light-grayish-blue;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            padding: .5em;
+            
+            img {
+                margin: 0 auto;
+            }
+
+            &:hover {
+                background: $dark-blue;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+
+}
