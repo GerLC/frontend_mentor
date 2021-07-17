@@ -94,6 +94,7 @@ main {
     border-radius: 10px;
     padding: 2rem;
     color: $white;
+    box-shadow: 5px 10px 50px hsl(0, 0%, 81%);
 
     @include for_breakpoint(mobile) {
         padding: 1.5rem;
