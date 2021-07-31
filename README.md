@@ -15,5 +15,7 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 
 | Tags  | Challanges | Live|  Code|  Type| 
 | --- | :---: |  -- | --  |  -- |
+| HTML--CSS--JS   | sunnyside-agency-landing-page-main | [Live](https://gerlc.github.io/frontend_mentor/blogr-landing-page-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/blogr-landing-page-main) |Free|
 | HTML--CSS--JS   | sunnyside-agency-landing-page-main | [Live](https://gerlc.github.io/frontend_mentor/sunnyside-agency-landing-page-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/sunnyside-agency-landing-page-main) |Free|
 | HTML--CSS       | testimonials-grid-section-main | [Live](https://gerlc.github.io/frontend_mentor/testimonials-grid-section-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/testimonials-grid-section-main) |Free|
+| HTML--CSS--JS   | social-media-dashboard-with-theme-switcher-master | [Live](https://gerlc.github.io/frontend_mentor/social-media-dashboard-with-theme-switcher-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/social-media-dashboard-with-theme-switcher-master) |Free|
