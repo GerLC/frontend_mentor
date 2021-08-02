@@ -310,11 +310,14 @@ body {
         grid-template-rows: auto;
   }
   .main-content .article-1 .article__content, .main-content .article-2 .article__content {
-    padding: 2rem 4rem;
+    padding: 3rem 6rem;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
     text-align: start;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
   }
   .main-content .article-1 {
     -ms-grid-column: 1;
@@ -392,10 +395,18 @@ body {
   .article__img--egg {
     content: url(../images/desktop/image-transform.jpg);
     width: 50%;
+    height: 100%;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
   }
   .article__img--cone {
     content: url(../images/desktop/image-stand-out.jpg);
     width: 50%;
+    height: 100%;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
   }
 }
 
