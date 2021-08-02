@@ -281,9 +281,10 @@ body {
         .article-1, .article-2 {
 
             .article__content {
-                padding: 2rem 4rem;
+                padding: 3rem 6rem;
                 align-items: flex-start;
                 text-align: start;
+                flex: 50%;
             }
         }
 
@@ -341,11 +342,15 @@ body {
             &--egg {
                 content: url(../images/desktop/image-transform.jpg);
                 width: 50%;
+                height: 100%;
+                flex: 50%;
             }
     
             &--cone {
                 content: url(../images/desktop/image-stand-out.jpg);
                 width: 50%;
+                height: 100%;
+                flex: 50%;
             }
         }
 
