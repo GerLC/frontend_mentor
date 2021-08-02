@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$submit-btn-color: hsl(154, 59%, 51%);
+$trial-btn-color: hsl(248, 32%, 49%);
+
+$error-text-color: hsl(0, 100%, 74%);
+$primary-text-color: hsl(249, 10%, 26%) ;
+$secondary-text-color: hsl(246, 25%, 77%);
+
+$bg-color: hsl(0, 100%, 74%);
+
+
+@mixin bg-radius($bg-color, $radius) {
+    background: $bg-color;
+    border-radius: $radius;
+    border: 1px solid $bg-color;
+}
+
+html {
+    font-size: 70%;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 1rem;
+
+    background: url(../images/bg-intro-mobile.png), $bg-color;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+
+    @media only screen and (min-width: 1024px) {
+        background: url(../images/bg-intro-desktop.png), $bg-color;
+    }
+}
+
+h1 {
+    font-weight: 700;
+    text-align: center;
+
+    @media only screen and (min-width: 1024px) {
+        text-align: start;
+        font-size: 3rem;
+
+    }
+}
+
+p {
+    font-weight: 400;
+    line-height: 2;
+    text-align: center;
+    margin: 1rem;
+
+    @media only screen and (min-width: 1024px) {
+        text-align: start;
+        margin: 0;
+        font-size: 1.2rem;
+    }
+}
+
+
+.main-content {
+    display: flex;
+    flex-flow: column;
+
+    max-width: 324px;
+
+    @media only screen and (min-width: 600px) {
+        max-width: 500px;
+    }
+
+    
+    @media only screen and (min-width: 1024px) {
+        flex-flow: row;
+        align-items: center;
+        max-width: 900px;
+    }
+
+}
+
+.content {
+
+    &__title {
+        height: 100%;
+
+        display: flex;
+        flex-flow: column;
+
+        color: #fff;
+        text-align: center;
+
+        @media only screen and (min-width: 1024px) {
+            width: 50%;
+        }
+    }
+
+    &__form {
+        height: 100%;
+
+        display: flex;
+        flex-flow: column;
+
+        @media only screen and (min-width: 1024px) {
+            width: 50%;
+            padding: 0 2rem;
+        }
+
+        .trial-btn {
+            @include bg-radius($trial-btn-color, 10px);
+
+            color: $secondary-text-color;
+            font-weight: 400;
+
+            padding: 1em 4em;
+            margin: 2rem 0;
+
+            line-height: 2;
+            text-align: center;
+
+            cursor: pointer;
+
+            &:active {
+                opacity: .7;
+            }
+
+            strong {
+                color: #fff;
+                font-weight: 700;
+            }
+
+        }
+
+
+        form {
+            @include bg-radius(#fff, 10px);
+            
+            display: flex;
+            flex-flow: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            padding: 1.5rem;
+
+            @media only screen and (min-width: 1024px) {
+                padding: 2rem;
+            }
+
+            input {
+                width: 100%;
+                margin: .5rem;
+                padding: 1rem;
+
+                border: 1px solid $secondary-text-color;
+                border-radius: 5px;
+
+                transition: 180ms box-shadow ease-in-out;
+
+
+   
+                &:invalid:not(:focus):not(:placeholder-shown) {
+                    background: url(../images/icon-error.svg) 95% center no-repeat;
+                    border-color: $error-text-color;
+                  }
+                  
+                  &:invalid:not(:placeholder-shown) {
+                    background: url(../images/icon-error.svg) 95% center no-repeat;
+                    border-color: $error-text-color;
+
+                    & + .error {
+                        max-height: 200px;
+                        padding: 0 30px 20px 50px;
+                    }
+                  }
+
+                  &:focus:required{
+                    &:invalid { 
+
+                        background: url(../images/icon-error.svg) 95% center no-repeat;
+                        border-color: $error-text-color;
+
+                        & + .error {
+                            max-height: 200px;
+                            padding: 0 30px 20px 50px;
+                        }
+                    }
+                    
+                  }
+                
+            }
+
+            input::placeholder {
+                font-weight: 600;
+                color: $primary-text-color;
+            }
+
+            input:focus {
+                box-shadow: 0 0 0 1px rgb(131, 131, 131);
+                outline: 3px solid transparent;
+            }
+
+            .error {
+                padding: 0 30px 0 50px;
+                color: #999;
+                max-height: 0;
+                transition: 0.28s;
+                overflow: hidden;
+                color: red;
+                font-style: italic;
+              }
+
+        }
+
+        .submit-btn {
+            @include bg-radius($submit-btn-color, 5px);
+            width: 100%;
+
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: #fff;
+
+            margin: 1rem 0 0;
+            padding: 1em 1.5em;
+
+            cursor: pointer;
+
+            @media only screen and (min-width: 1024px) {
+                font-size: 1.2rem;
+            }
+
+            &:active {
+                opacity: 0.7;
+            }
+
+        }
+
+
+        p {
+            color: $secondary-text-color;
+            text-align: center;
+
+            @media only screen and (min-width: 1024px) {
+                margin: 1rem;
+                font-size: .8em;
+            }
+        }
+
+        a {
+            color: $error-text-color;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    }
+
+}

@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+html {
+  font-size: 70%;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 1rem;
+  background: url(../images/bg-intro-mobile.png), #ff7a7a;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    background: url(../images/bg-intro-desktop.png), #ff7a7a;
+  }
+}
+
+h1 {
+  font-weight: 700;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  h1 {
+    text-align: start;
+    font-size: 3rem;
+  }
+}
+
+p {
+  font-weight: 400;
+  line-height: 2;
+  text-align: center;
+  margin: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  p {
+    text-align: start;
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+
+.main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  max-width: 324px;
+}
+
+@media only screen and (min-width: 600px) {
+  .main-content {
+    max-width: 500px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 900px;
+  }
+}
+
+.content__title {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  color: #fff;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .content__title {
+    width: 50%;
+  }
+}
+
+.content__form {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+@media only screen and (min-width: 1024px) {
+  .content__form {
+    width: 50%;
+    padding: 0 2rem;
+  }
+}
+
+.content__form .trial-btn {
+  background: #6055a5;
+  border-radius: 10px;
+  border: 1px solid #6055a5;
+  color: #b9b6d3;
+  font-weight: 400;
+  padding: 1em 4em;
+  margin: 2rem 0;
+  line-height: 2;
+  text-align: center;
+  cursor: pointer;
+}
+
+.content__form .trial-btn:active {
+  opacity: .7;
+}
+
+.content__form .trial-btn strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.content__form form {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .content__form form {
+    padding: 2rem;
+  }
+}
+
+.content__form form input {
+  width: 100%;
+  margin: .5rem;
+  padding: 1rem;
+  border: 1px solid #b9b6d3;
+  border-radius: 5px;
+  -webkit-transition: 180ms -webkit-box-shadow ease-in-out;
+  transition: 180ms -webkit-box-shadow ease-in-out;
+  transition: 180ms box-shadow ease-in-out;
+  transition: 180ms box-shadow ease-in-out, 180ms -webkit-box-shadow ease-in-out;
+}
+
+.content__form form input:invalid:not(:focus):not(:placeholder-shown) {
+  background: url(../images/icon-error.svg) 95% center no-repeat;
+  border-color: #ff7a7a;
+}
+
+.content__form form input:invalid:not(:placeholder-shown) {
+  background: url(../images/icon-error.svg) 95% center no-repeat;
+  border-color: #ff7a7a;
+}
+
+.content__form form input:invalid:not(:placeholder-shown) + .error {
+  max-height: 200px;
+  padding: 0 30px 20px 50px;
+}
+
+.content__form form input:focus:required:invalid {
+  background: url(../images/icon-error.svg) 95% center no-repeat;
+  border-color: #ff7a7a;
+}
+
+.content__form form input:focus:required:invalid + .error {
+  max-height: 200px;
+  padding: 0 30px 20px 50px;
+}
+
+.content__form form input::-webkit-input-placeholder {
+  font-weight: 600;
+  color: #3e3c49;
+}
+
+.content__form form input:-ms-input-placeholder {
+  font-weight: 600;
+  color: #3e3c49;
+}
+
+.content__form form input::-ms-input-placeholder {
+  font-weight: 600;
+  color: #3e3c49;
+}
+
+.content__form form input::placeholder {
+  font-weight: 600;
+  color: #3e3c49;
+}
+
+.content__form form input:focus {
+  -webkit-box-shadow: 0 0 0 1px #838383;
+          box-shadow: 0 0 0 1px #838383;
+  outline: 3px solid transparent;
+}
+
+.content__form form .error {
+  padding: 0 30px 0 50px;
+  color: #999;
+  max-height: 0;
+  -webkit-transition: 0.28s;
+  transition: 0.28s;
+  overflow: hidden;
+  color: red;
+  font-style: italic;
+}
+
+.content__form .submit-btn {
+  background: #38cc8c;
+  border-radius: 5px;
+  border: 1px solid #38cc8c;
+  width: 100%;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 1rem 0 0;
+  padding: 1em 1.5em;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px) {
+  .content__form .submit-btn {
+    font-size: 1.2rem;
+  }
+}
+
+.content__form .submit-btn:active {
+  opacity: 0.7;
+}
+
+.content__form p {
+  color: #b9b6d3;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .content__form p {
+    margin: 1rem;
+    font-size: .8em;
+  }
+}
+
+.content__form a {
+  color: #ff7a7a;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */

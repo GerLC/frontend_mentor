@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main class="main-content">
+    <div class="content__title">
+      <h1>
+        Learn to code by watching others
+      </h1>
+      <p>
+        See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable. 
+      </p>    
+    </div>
+    <div class="content__form">
+      <button class="trial-btn">
+        <strong>Try it free 7 days</strong> then $20/mo. thereafter
+      </button>
+    <form action="#"> 
+      <input type="text" id="fname" name="fname" placeholder="First Name" required>
+      <div class="error">
+          First Name cannot be empty
+      </div>
+      <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+      <div class="error">
+          Last Name cannot be empty
+      </div>
+      <input type="email" id="email" name="email" placeholder="Email Address" required>
+      <div class="error">
+          Looks like this is not an email
+      </div>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <div class="error">
+          Password cannot be empty
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Claim your free trial 
+      </button>
+      
+      <p>
+        By clicking the button, you are agreeing to our 
+        <a>
+          Terms and Services
+        </a>
+      </p>
+    </form>      
+      
+    </div>>
+  </main>
+
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">GerLC</a>.
+    </p>
+  </footer>
+</body>
+</html>
