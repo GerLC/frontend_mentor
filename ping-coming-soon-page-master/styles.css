@@ -34,6 +34,12 @@ h1 {
     color: var(--gray-text-color);
 }
 
+@media screen and (min-width:1024px) {
+    h1 {
+        font-size: calc(2rem + 1.5vw) !important;     
+    }
+}
+
 strong {
     color: var(--text-color);
 }
@@ -45,6 +51,8 @@ p {
 
 /* Container */
 .container {
+    max-width: 768px !important;
+
     margin: 5rem 0;
     padding-right: var(--bs-gutter-x, 1.5rem) !important;
     padding-left: var(--bs-gutter-x, 1.5rem) !important;
@@ -97,6 +105,8 @@ p {
 /* Footer */
 
 .copyright {
+    font-size: .8rem;
+
     color: var(--gray-text-color);
 }
 
