@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+/* Variables */
+:root {
+    --error-text-color: hsl(354, 100%, 66%);
+    --light-blue: hsl(223, 100%, 88%);
+    --gray-text-color: hsl(0, 0%, 59%);
+    --text-color: hsl(209, 33%, 12%);
+}
+
+/* Base */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}  
+
+ul {
+    padding: 0 !important;
+    list-style: none;
+}
+
+/* Typo */
+h1 {
+    color: var(--gray-text-color);
+}
+
+strong {
+    color: var(--text-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+
+/* Container */
+.container {
+    margin: 5rem 0;
+    padding-right: var(--bs-gutter-x, 1.5rem) !important;
+    padding-left: var(--bs-gutter-x, 1.5rem) !important;
+}
+
+.header {
+    margin: 0 0 2rem;
+}
+
+.header p {
+    margin: 1rem;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+/* Email input */
+.form-control {
+    width: 100%;
+    padding: 0 3rem ;
+}
+
+.form-control::placeholder {
+    color: var(--gray-text-color) !important;
+    opacity: .7 !important;
+}
+
+.invalid-feedback {
+    font-size: .8rem;
+}
+
+/* Button */
+
+.btn {
+    width: 100%;
+}
+
+
+/* Image */
+.site-image {
+    margin: 2rem 0;
+}
+
+.site-image img {
+    width: 100%;
+}
+
+
+/* Footer */
+
+.copyright {
+    color: var(--gray-text-color);
+}
+
+.footer-links {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.footer-item {
+    margin: 1rem;
+}
+
+.footer-item > i {
+    display: flex;
+    align-items: center;
+
+    padding: .5em;
+
+    font-size: 1rem;
+
+    border: .5px solid var(--light-blue);
+    border-radius: 50%;
+}
+
+.footer-item > i:hover {
+    background: #0d6efd;
+    color: #fff !important;
+}
+

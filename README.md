@@ -10,6 +10,7 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 | HTML--CSS      |  single-price-grid-component-master | [Live](https://gerlc.github.io/frontend_mentor/single-price-grid-component-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/single-price-grid-component-master) |Free|
 | HTML--CSS      |  article-preview-component-master | [Live](https://gerlc.github.io/frontend_mentor/article-preview-component-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/article-preview-component-master) |Free|
 | HTML--CSS      |  intro-component-with-signup-form-master | [Live](https://gerlc.github.io/frontend_mentor/intro-component-with-signup-form-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/intro-component-with-signup-form-master) |Free|
+| HTML--CSS      |  ping-coming-soon-page-master | [Live](https://gerlc.github.io/frontend_mentor/ping-coming-soon-page-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/ping-coming-soon-page-master) |Free|
 | HTML--CSS--JS  |  faq-accordion-card-main | [Live](https://gerlc.github.io/frontend_mentor/faq-accordion-card-mai) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/faq-accordion-card-main) |Free|
 
 
