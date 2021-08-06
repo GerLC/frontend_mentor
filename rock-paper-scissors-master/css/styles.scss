@@ -1,0 +1,367 @@
+
+$scissor-bg:  linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+$paper-bg: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+$rock-bg:  linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+$bg-color: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+
+$btn-shadow-inset: rgba(0, 0, 0, 0.2);
+$rock-btn-border: hsl(349, 71%, 52%);
+$rock-btn-shadow: hsla(349, 70%, 56%, 0.7);
+$paper-btn-border: hsl(230, 89%, 62%);
+$paper-btn-shadow: hsla(230, 89%, 65%, 0.7);
+$scissor-btn-border: hsl(39, 89%, 49%);
+$scissor-btn-shadow: hsla(40, 84%, 53%, 0.7);
+
+$score-text-color: hsl(229, 25%, 31%);
+$dark-text-color: hsl(229, 64%, 46%);
+$outline-color:hsl(217, 16%, 45%);
+
+$font: 'Barlow Semi Condensed', sans-serif;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: $bg-color;
+
+    font-family: $font;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button {
+    text-transform: uppercase;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+// Header
+
+.scoreboard {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 50%;
+
+    padding: 1rem 1.5rem;
+    margin: 2rem auto;
+
+    border: 1px solid $outline-color;
+    border-radius: 12px;
+
+    color: $score-text-color;
+
+    &__logo {
+        position: relative;
+    }
+
+    &__box {
+        border: 1px solid $outline-color;
+        border-radius: 10px;
+        background: #fff;
+
+        padding: 1rem 3rem;
+        line-height: .9;
+
+        &--score {
+            font-size: 1.25rem;
+        }
+
+        &--value {
+            font-size: 4rem;
+            font-weight: 700;
+        }
+    }
+}
+
+
+// Main Wrapper
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 35%;
+    height: 60vh;
+    margin: 5% auto;
+
+    background: url(../images/bg-triangle.svg) no-repeat center;
+    background-size: 60%;
+}
+
+
+// Buttons
+
+@mixin btn-settings($btnBorderColor, $btnShadowColor) {
+    border: 16px solid $btnBorderColor !important;
+    box-shadow: inset 0 6px $btn-shadow-inset, 0 6px $btnShadowColor;
+}
+
+@keyframes mouseIn {
+    0% {
+        transform: scale(1);
+
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 0px 0px 0px;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 10px 20px 5px;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 0px 0px 0px;
+    }
+}
+
+
+.btn {
+    width: 40%;
+    height: 40%;
+    cursor: pointer;
+    border-radius: 50%;
+
+    &-paper {
+        @include btn-settings($paper-btn-border, $paper-btn-shadow);
+        background: url('../images/icon-paper.svg') center no-repeat, #fff !important;
+        
+        background-size: 50%;
+    }
+
+    &-rock {
+        @include btn-settings($rock-btn-border, $rock-btn-shadow);
+
+        background: url('../images/icon-rock.svg') center no-repeat, #fff !important;
+        background-size: 50%;
+
+        align-self: flex-end;
+    }
+
+    &-scissor {
+        @include btn-settings($scissor-btn-border, $scissor-btn-shadow);
+
+        background: url('../images/icon-scissors.svg') center no-repeat, #fff !important;
+        background-size: 50%;
+    }
+
+    &:hover {
+        animation: mouseIn 3s ease-in-out infinite;
+    }
+}
+
+
+// Result Wrapper
+
+.result-wrapper {
+    display: none;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    height: 60vh;
+    margin: 5% auto;
+}
+
+.player, .result, .house {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.result {
+    display: none;
+    justify-content: center;
+
+    &-player {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-block: 1rem;
+    }
+
+    .btn-reset {
+        padding: 1em 2em;
+        width: 50%;
+        font-size: 1rem;
+        letter-spacing: .25rem;
+        border-radius: 8px;
+    }
+
+}
+
+
+.player-text {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .25rem;
+}
+
+.btn-result {
+    position: relative;
+    align-self: initial;
+
+    width: 40%;
+    height: 40%;
+
+    background-color: $btn-shadow-inset;
+    border: none;
+
+    cursor: pointer;
+    border-radius: 50%;
+    transform: scale(1.5);
+}
+
+.is-winner {
+    box-shadow: 0 0 0 50px rgba(255,255,255,.05),
+    0 0 0 90px  rgba(255,255,255,.03),
+    0 0 0 150px  rgba(255,255,255, .01);
+    z-index: -1;
+}
+
+
+@keyframes animateLoad {
+    0% {
+        transform: scale(1.2);
+        opacity: 1;
+        }
+    50% {
+        transform: scale(.8);
+        opacity: .5;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.is-loading {
+    animation: animateLoad 2s ease-in-out infinite both;
+}
+
+
+// Footer 
+
+.footer-wrapper {   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: auto;
+    width: 95%;
+}
+
+.btn-rule {
+    padding: .8em 2.5em;
+    margin: 1rem;
+
+    background: transparent;
+    border: 1px solid $outline-color;
+    border-radius: 8px;
+
+    color: #fff;
+
+    &:hover {
+        background: #fff;
+        color: $score-text-color;
+    }
+}
+
+
+
+// MODAL
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background: #fff;
+    padding: 2rem;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 10px;
+    
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    transition: transform .5s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: #fff;
+    color: $score-text-color;
+
+  }
+  
+  .modal-body {
+      padding: 2px 20px;
+    }
