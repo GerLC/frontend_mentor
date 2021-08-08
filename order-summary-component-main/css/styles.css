@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+/*----------------------------
+	Variables
+----------------------------*/
+/*----------------------------
+	Breakpoint
+----------------------------*/
+/*----------------------------
+	Base
+----------------------------*/
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 50%;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: url(../images/pattern-background-mobile.svg) no-repeat top center, #e0e8ff;
+  background-size: cover;
+  font-size: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    background: url(../images/pattern-background-desktop.svg) no-repeat top center, #e0e8ff;
+  }
+}
+
+/*----------------------------
+	Typography
+----------------------------*/
+h2 {
+  text-align: center;
+  font-weight: 900;
+  color: #1f2f56;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2f56;
+}
+
+p {
+  text-align: center;
+  color: #7280a7;
+  line-height: 1.5;
+}
+
+/*----------------------------
+	Container
+----------------------------*/
+.container {
+  width: 100%;
+  max-width: 362px;
+  height: 100%;
+  padding: 4rem 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    padding: 0;
+  }
+}
+
+/*----------------------------
+	Card
+----------------------------*/
+.card {
+  margin-block: 5rem;
+  border-radius: 10px;
+  background: white;
+  -webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.card__header img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card__content {
+  padding: 2.5rem;
+}
+
+.card__title {
+  margin: 1rem 0;
+}
+
+.card__paragraph {
+  margin: 2rem 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .card__paragraph {
+    padding: 0 4rem;
+  }
+}
+
+.card__action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.card__btn {
+  width: 95%;
+  padding: 1.2em 4em;
+  border-radius: 10px;
+  border: 1px solid #3829e0;
+  background: #3829e0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  color: white;
+  font-weight: 700;
+}
+
+.card__btn:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
+}
+
+.card__cancel {
+  margin: 2.5rem 0 3rem;
+  color: #7280a7;
+  font-weight: 700;
+}
+
+.card__cancel:hover {
+  cursor: pointer;
+  color: #1f2f56;
+}
+
+.card-plan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background: #f5f7ff;
+  border-radius: 10px;
+}
+
+.card-plan__plan {
+  padding: 0 1rem;
+}
+
+.card-plan__name {
+  color: #1f2f56;
+}
+
+.card-plan__price {
+  font-size: 1.8rem;
+  color: #7280a7;
+}
+
+.card-plan__change {
+  justify-self: flex-end;
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  color: #3829e0;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.card-plan__change:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
+}
+/*# sourceMappingURL=styles.css.map */

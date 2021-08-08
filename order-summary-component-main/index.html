@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Order summary card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+    <link href="./css/styles.css" rel="stylesheet" />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        position: absolute;
+        bottom: -20px;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <article class="card">
+        <div class="card__header">
+          <img alt="hero ilustration" src="./images/illustration-hero.svg" />
+        </div>
+
+        <div class="card__content">
+          <h2 class="card__title">Order Summary</h2>
+          <p class="card__paragraph">
+            You can now listen to millions of songs, audiobooks, and podcasts on
+            any device anywhere you like!
+          </p>
+
+          <div class="card-plan">
+            <img src="./images/icon-music.svg" alt="music icon" />
+            <div class="card-plan__plan">
+              <h3 class="card-plan__name">Annual Plan</h3>
+              <span class="card-plan__price"> $59.99/year </span>
+            </div>
+            <span class="card-plan__change"> Change </span>
+          </div>
+        </div>
+        
+        <div class="card__action">
+          <button class="card__btn">Proceed to Payment</button>
+          <span class="card__cancel"> Cancel Order </span>
+        </div>
+      </article>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/GerLC/">GerLC</a>.
+    </div>
+  </body>
+</html>
