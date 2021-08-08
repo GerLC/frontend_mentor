@@ -26,4 +26,6 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 
 ### Advance
 
+| Tags  | Challanges | Live|  Code|  Type| 
+| --- | :---: |  -- | --  |  -- |
 | HTML--CSS--JS   | rock-paper-scissors-master | [Live](https://gerlc.github.io/frontend_mentor/rock-paper-scissors-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/rock-paper-scissors-master) |Free|
