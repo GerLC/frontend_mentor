@@ -97,6 +97,14 @@ function compareResult(player, oponent) {
         isWinner = true;
     }
     
+    if (player == 'spock' && (oponent == 'rock' || oponent == 'scissor')) {
+        isWinner = true;
+    }
+    
+    if (player == 'lizard' && (oponent == 'spock' || oponent == 'paper')) {
+        isWinner = true;
+    }
+    
     return isWinner;
 }
 
