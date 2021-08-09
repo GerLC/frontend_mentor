@@ -31,6 +31,14 @@ $font-weight-bolder: 700;
 html {
     box-sizing: border-box;
     font-size: 100%;
+
+    @media screen and (max-width: 425px) {
+        font-size: 50%;
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 62.5%;
+    }
 }
 
 body {
@@ -73,8 +81,17 @@ button {
 
     color: $score-text-color;
 
+    @media screen and (max-width: 425px) {
+        padding: .8em;
+        width: 85%;
+    }
+
     &__logo {
         position: relative;
+
+        @media screen and (max-width: 425px) {
+            width: 40%;
+        }
     }
 
     &__box {
@@ -84,6 +101,10 @@ button {
 
         padding: 1rem 3rem;
         line-height: .9;
+
+        @media screen and (max-width: 425px) {
+            padding: .8em 1.5em;
+        }
 
         &--score {
             font-size: 1.25rem;
@@ -103,12 +124,19 @@ button {
     display: flex;
     justify-content: space-evenly;
 
-    width: 35%;
+    width: 40%;
     height: 60vh;
     margin: 5% auto;
 
     background: url(../images/bg-triangle.svg) no-repeat center;
     background-size: 60%;
+
+    @media screen and (max-width: 425px) {
+        margin-block: 6rem;
+        width: 80%;
+        height: 50vh;
+    }
+
 }
 
 
@@ -117,12 +145,16 @@ button {
 @mixin btn-settings($btnBorderColor, $btnShadowColor) {
     border: 16px solid $btnBorderColor !important;
     box-shadow: inset 0 6px $btn-shadow-inset, 0 6px $btnShadowColor;
+
+    @media screen and (max-width: 425px) {
+        border: 10px solid $btnBorderColor !important;
+
+    }
 }
 
 @keyframes mouseIn {
     0% {
         transform: scale(1);
-
         box-shadow: rgba(0, 0, 0, 0.56) 0px 0px 0px 0px;
     }
 
@@ -143,19 +175,19 @@ button {
     height: 40%;
     cursor: pointer;
     border-radius: 50%;
+    transition: filter .1s ease-in;
 
     &-paper {
         @include btn-settings($paper-btn-border, $paper-btn-shadow);
         background: url('../images/icon-paper.svg') center no-repeat, #fff !important;
-        
-        background-size: 50%;
+        background-size: 50% !important;
     }
 
     &-rock {
         @include btn-settings($rock-btn-border, $rock-btn-shadow);
 
         background: url('../images/icon-rock.svg') center no-repeat, #fff !important;
-        background-size: 50%;
+        background-size: 50% !important;
 
         align-self: flex-end;
     }
@@ -164,11 +196,12 @@ button {
         @include btn-settings($scissor-btn-border, $scissor-btn-shadow);
 
         background: url('../images/icon-scissors.svg') center no-repeat, #fff !important;
-        background-size: 50%;
+        background-size: 50% !important;
     }
 
     &:hover {
         animation: mouseIn 3s ease-in-out infinite;
+        filter: brightness(110%);
     }
 }
 
@@ -178,12 +211,23 @@ button {
 .result-wrapper {
     display: none;
 
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-evenly;
     align-items: center;
 
     width: 100%;
+    max-width: 1024px;
     height: 60vh;
     margin: 5% auto;
+
+    &--show {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    @media screen and (max-width: 425px) {
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    }
 }
 
 .player, .result, .house {
@@ -194,7 +238,104 @@ button {
     
     width: 100%;
     height: 100%;
+
 }
+
+.player, .house {
+    @media screen and (max-width: 425px) {
+        flex-flow: column-reverse;
+    }
+}
+
+.player {
+    @media screen and (max-width: 425px) {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+}
+
+.house {
+    @media screen and (max-width: 425px) {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+}
+
+.result {
+    @media screen and (max-width: 425px) {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+}
+
+
+@keyframes jump {
+    20% {
+      transform: translateY(2%) scaleY(0.9);
+    }
+    40% {
+      transform: translateY(-100%) scaleY(1.2);
+    }
+    50% {
+      transform: translateY(10%) scaleY(0.8);
+    }
+    70% {
+      transform: translateY(-5%) scaleY(1);
+    }
+    80%, 100% {
+      transform: translateY(0) scaleY(1);
+    }
+  }
+
+
+  @keyframes float {
+    from {
+      transform: translate(2%, -10%) rotate(-1deg);
+    }
+    to {
+      transform: translate(-2%, 5%) rotate(3deg);
+    }
+  }
+
+  @keyframes float-alt {
+    from {
+      transform: translate(0%, -5%) rotate(-1deg);
+    }
+    to {
+      transform: translate(2%, 10%) rotate(3deg);
+    }
+  }
+
+  @keyframes jog {
+    0% {
+      transform: translate(0, 0) rotate(5deg);
+    }
+    25% {
+      transform: translate(5%, -5%) rotate(10deg);
+    }
+    50% {
+      transform: translate(5%, 0) rotate(15deg);
+    }
+    75% {
+      transform: translate(10%, -5%) rotate(10deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(5deg);
+    }
+  }
+
+.result-player {
+    
+    &--won {
+        animation: jump 2s cubic-bezier(0.165, 0.44, 0.64, 1) infinite;
+    }
+
+    &--lost {
+        animation: float 2s ease-in-out infinite alternate;
+    }
+    
+    &--draw {
+        animation: float 2s ease-in-out infinite alternate;
+    }
+}
+
 
 .result {
     display: none;
@@ -212,6 +353,12 @@ button {
         font-size: 1rem;
         letter-spacing: .25rem;
         border-radius: 8px;
+        border: 1px solid transparent;
+
+        &:hover {
+            cursor: pointer;
+            filter: brightness(110%);
+        }
     }
 
 }
@@ -221,6 +368,11 @@ button {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: .25rem;
+
+    @media screen and (max-width: 425px) {
+        font-size: 1.2rem;
+    }
+
 }
 
 .btn-result {
@@ -236,12 +388,41 @@ button {
     cursor: pointer;
     border-radius: 50%;
     transform: scale(1.5);
+
+    @media screen and (max-width: 425px) {
+        transform: initial;
+        width: 50%;
+        height: 50%;
+    
+    }
+}
+
+@keyframes animateWinner {
+    0% {
+        box-shadow: 
+        0 0 0 50px rgba(255,255,255,.05),
+        0 0 0 90px  rgba(255,255,255,.03),
+        0 0 0 150px  rgba(255,255,255, .01);
+        }
+    50% {
+        box-shadow: 
+        0 0 0 90px  rgba(255,255,255,.03),
+        0 0 0 150px  rgba(255,255,255, .01)
+        0 0 0 50px rgba(255,255,255,.05);
+    }
+    100% {
+        box-shadow: 
+        0 0 0 150px  rgba(255,255,255, .01),
+        0 0 0 50px rgba(255,255,255,.05),
+        0 0 0 90px  rgba(255,255,255,.03);
+    }
 }
 
 .is-winner {
-    box-shadow: 0 0 0 50px rgba(255,255,255,.05),
-    0 0 0 90px  rgba(255,255,255,.03),
-    0 0 0 150px  rgba(255,255,255, .01);
+    animation: animateWinner 5s ease-in-out .5s infinite both reverse;
+    // box-shadow: 0 0 0 50px rgba(255,255,255,.05),
+    // 0 0 0 90px  rgba(255,255,255,.03),
+    // 0 0 0 150px  rgba(255,255,255, .01);
     z-index: -1;
 }
 
@@ -275,6 +456,11 @@ button {
 
     margin: auto;
     width: 95%;
+
+    @media screen and (max-width: 425px) {
+        flex-flow: column-reverse;
+        margin-block: 7rem 5rem;
+    }
 }
 
 .btn-rule {
@@ -293,7 +479,11 @@ button {
     }
 }
 
-
+.attribution {
+    @media screen and (max-width: 425px) {
+        font-size: 1.2rem;
+    }
+}
 
 // MODAL
 
@@ -312,6 +502,16 @@ button {
     overflow: auto;
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
+
+
+    @media screen and (max-width: 425px) {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
   }
   
   /* Modal Content */
@@ -326,7 +526,25 @@ button {
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+
+    @media screen and (max-width: 425px) {
+        position: fixed; 
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        
+        padding: 0;
+        border-radius: 0;
+        box-shadow: initial;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
   }
   
   /* Add Animation */
@@ -343,6 +561,19 @@ button {
   /* The Close Button */
   .close {
     transition: transform .5s;
+
+    &--mobile {
+        display: none;
+        @media screen and (max-width: 425px) {
+            display: block;
+        }
+    }
+
+    &--not-mobile {
+        @media screen and (max-width: 425px) {
+            display: none;
+        }
+    }
   }
   
   .close:hover,
@@ -360,8 +591,17 @@ button {
     background: #fff;
     color: $score-text-color;
 
+    @media screen and (max-width: 425px) {
+        justify-content: center;
+    }
   }
   
   .modal-body {
       padding: 2px 20px;
+
+      @media screen and (max-width: 425px) {
+        img {
+            width: 100%;
+        }
     }
+}

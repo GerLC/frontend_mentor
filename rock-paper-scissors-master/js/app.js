@@ -70,26 +70,29 @@ function compareResult(player, oponent) {
 
 function renderResult() {
     gameWrapper.style.display = 'none';
-    resultWrapper.style.display = 'flex';
+    resultWrapper.style.display = 'grid';
 
     player.classList.add(`btn-${playerChoice}`);
     house.classList.add(`is-loading`);
+    resultWrapper.style.maxWidth = '1024px';
 
     setTimeout(() => {
-
         getResult();
         resultDisplay.style.display = 'flex';
         house.classList.remove(`is-loading`);
         house.classList.add(`btn-${houseChoice}`);
+        resultWrapper.classList.add('result-wrapper--show');
+        resultWrapper.style.maxWidth = '100%';
 
     }, 3000)
-
 
 }
 
 function getResult() {
     if (isWinner) {
         result.textContent = 'You Win';
+        result.classList.add('result-player--won');
+
         player.classList.add('is-winner');
         score++;
         scoreValue.textContent = score;
@@ -98,6 +101,8 @@ function getResult() {
 
     if (isWinner == false) {
         result.textContent = 'You Lose';
+        result.classList.add('result-player--lost');
+
         house.classList.add('is-winner');
         score--;
         scoreValue.textContent = score;
@@ -106,6 +111,7 @@ function getResult() {
 
     if (typeof(isWinner) === 'undefined') {
         result.textContent = 'It\'s a Draw';
+        result.classList.add('result-player--draw');
     }
 
 }
@@ -117,6 +123,8 @@ function resetGame() {
 
     player.classList.remove(`btn-${playerChoice}`, 'is-winner');
     house.classList.remove(`btn-${houseChoice}`, 'is-winner');
+    result.classList.remove('result-player--won', 'result-player--lost', 'result-player--draw');
+    resultWrapper.classList.remove('result-wrapper--show');
 
     playerChoice = null;
     houseChoice = null;
