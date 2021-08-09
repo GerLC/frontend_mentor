@@ -101,8 +101,12 @@ button {
     }
 
     .main-wrapper {
-        background: url(../images/bg-pentagon.svg) no-repeat center;
+        background: url(../images/bg-pentagon.svg) no-repeat center 80%;
         background-size: 70%;
+
+        @media screen and (max-width: 1024px) {
+            background: url(../images/bg-pentagon.svg) no-repeat center;
+        }
     }
 
     .btn {
