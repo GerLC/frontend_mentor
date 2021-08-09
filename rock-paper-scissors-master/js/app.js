@@ -1,5 +1,6 @@
 let scoreValue = document.querySelector('#score');
 let winnerText = document.querySelector('#result');
+const logo = document.getElementsByClassName('scoreboard__logo')[0];
 
 const gameWrapper = document.querySelector('.main-wrapper');
 const resultWrapper = document.querySelector('.result-wrapper');
@@ -16,19 +17,47 @@ let score = localStorage.getItem('score') | 0;
 
 scoreValue.textContent = score;
 
-console.log(score)
+logo.addEventListener('click', changeToBonusGame)
 
-console.log(housePlay())
+function changeToBonusGame() {
+
+    gameWrapper.style.opacity = 0;
+    addAnimation(logo, 'twirl', 2.5);
+    logo.style.opacity = 0;
+
+    setTimeout(() => {
+        document.body.classList.toggle("bonus");
+        logo.style.opacity = 1;
+
+    }, 1500);
+
+    setTimeout(() => {
+        gameWrapper.style.opacity = 1;
+
+        logo.removeAttribute("style");
+    }, 2000);
+
+}
 
 buttonsSelection.forEach((x) => {
     x.addEventListener('click', startGame)
 })
 
+let addAnimation = (element, animation, time) => {
+    element.style.animation = `${animation}+${time}s ease-in forwards`
+}
 
 playAgainBtn.addEventListener('click', resetGame);
 
 function housePlay() {
-    const random = Math.floor(Math.random() * buttonsSelection.length);
+    let random = null;
+
+    if (document.body.classList.contains('bonus')) {
+        random = Math.floor(Math.random() * buttonsSelection.length);
+    } else {
+        random = Math.floor(Math.random() * (buttonsSelection.length - 2));
+    }
+    
     houseSelection = buttonsSelection[random].id;
 
     return houseSelection;
@@ -38,30 +67,33 @@ function housePlay() {
 function startGame(e) {
     playerChoice = e.currentTarget.id;
     houseChoice = housePlay();
-    console.log(playerChoice, houseChoice);
+    // console.log(playerChoice, houseChoice);
 
     compareResult(playerChoice, houseChoice);
-    console.log('result = ', compareResult(playerChoice, houseChoice))
+    // console.log('result = ', compareResult(playerChoice, houseChoice))
 
-    renderResult();
+    addAnimation(e.target.parentElement, "zoomOut", .5)
+
+    setTimeout(() => renderResult(), .6 * 999);
+
 }
 
 
 function compareResult(player, oponent) {
 
-    if (player == oponent) {
+    if (player === oponent) {
         isWinner = undefined;
     }
 
-    if (player == 'scissor' && oponent == 'paper') {
+    if (player == 'scissor' && (oponent == 'paper' || oponent == 'lizard')) {
         isWinner = true;
     }
 
-    if (player == 'rock' && oponent == 'scissor') {
+    if (player == 'rock' && (oponent == 'scissor' || oponent == 'lizard')) {
         isWinner = true;
     }
 
-    if (player == 'paper' && oponent == 'rock') {
+    if (player == 'paper' && (oponent == 'rock' || oponent == 'spock')) {
         isWinner = true;
     }
     
@@ -69,6 +101,7 @@ function compareResult(player, oponent) {
 }
 
 function renderResult() {
+
     gameWrapper.style.display = 'none';
     resultWrapper.style.display = 'grid';
 
@@ -83,7 +116,6 @@ function renderResult() {
         house.classList.add(`btn-${houseChoice}`);
         resultWrapper.classList.add('result-wrapper--show');
         resultWrapper.style.maxWidth = '100%';
-
     }, 3000)
 
 }
@@ -120,6 +152,9 @@ function resetGame() {
     gameWrapper.style.display = 'flex';
     resultWrapper.style.display = 'none';
     resultDisplay.style.display = 'none';
+    
+    gameWrapper.removeAttribute("style");
+    logo.removeAttribute("style");
 
     player.classList.remove(`btn-${playerChoice}`, 'is-winner');
     house.classList.remove(`btn-${houseChoice}`, 'is-winner');

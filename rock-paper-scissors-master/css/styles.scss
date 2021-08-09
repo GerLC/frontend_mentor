@@ -1,3 +1,4 @@
+//  Using too much importants :(
 
 $scissor-bg:  linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
 $paper-bg: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
@@ -11,6 +12,10 @@ $paper-btn-border: hsl(230, 89%, 62%);
 $paper-btn-shadow: hsla(230, 89%, 65%, 0.7);
 $scissor-btn-border: hsl(39, 89%, 49%);
 $scissor-btn-shadow: hsla(40, 84%, 53%, 0.7);
+$lizard-btn-border: hsl(261, 73%, 60%);
+$lizard-btn-shadow:  hsla(261, 72%, 63%, 0.7);
+$spock-btn-border: hsl(189, 58%, 57%);
+$spock-btn-shadow:  hsla(189, 59%, 53%, 0.7);
 
 $score-text-color: hsl(229, 25%, 31%);
 $dark-text-color: hsl(229, 64%, 46%);
@@ -63,6 +68,93 @@ button {
     height: 100%;
 }
 
+
+// Bonus
+
+@keyframes twirl {
+    2.5% {
+      transform: rotateY(1turn);
+    }
+    5% {
+      transform: rotateY(2turn);
+    }
+    10% {
+      transform: rotateY(3turn);
+    }
+    20% {
+      transform: rotateY(4turn);
+    }
+    40% {
+      transform: rotateY(5turn);
+    }
+    70%, 100% {
+      transform: rotateY(6turn);
+    }
+  }
+
+.bonus {
+
+    .scoreboard {
+        &__logo {
+            content: url(../images/logo-bonus.svg);
+        }
+    }
+
+    .main-wrapper {
+        background: url(../images/bg-pentagon.svg) no-repeat center;
+        background-size: 70%;
+    }
+
+    .btn {
+        position: relative;
+        width: 30%;
+        height: 25%;
+
+        &-paper {
+            align-self: center;
+            order: 5;
+
+        }
+    
+        &-rock {
+            align-self: flex-end;
+            order: 4;
+
+        }
+    
+        &-scissor {
+            align-self: initial;
+            order: 3;
+        }
+
+        &-lizard {
+            align-self: flex-end;
+            order: 2;
+            display: initial;
+
+        }
+    
+        &-spock {
+            align-self: center;
+            order: 1;
+            display: initial;
+
+
+        }
+
+        @media screen and (max-width: 800px) {
+            border-width: 6px !important;
+        }
+    }
+
+
+    .modal-body {
+        img {
+            content: url(../images/image-rules-bonus.svg);
+        }
+    }
+}
+
 // Header
 
 .scoreboard {
@@ -88,7 +180,12 @@ button {
 
     &__logo {
         position: relative;
+        transition: all 1s;
 
+        &:hover {
+            cursor: pointer;
+        }
+        
         @media screen and (max-width: 425px) {
             width: 40%;
         }
@@ -120,6 +217,18 @@ button {
 
 // Main Wrapper
 
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(.5);
+        opacity: .1;
+    }
+}
+
 .main-wrapper {
     display: flex;
     justify-content: space-evenly;
@@ -130,6 +239,8 @@ button {
 
     background: url(../images/bg-triangle.svg) no-repeat center;
     background-size: 60%;
+
+    transition: all .5s ease-out;
 
     @media screen and (max-width: 425px) {
         margin-block: 6rem;
@@ -145,7 +256,7 @@ button {
 @mixin btn-settings($btnBorderColor, $btnShadowColor) {
     border: 16px solid $btnBorderColor !important;
     box-shadow: inset 0 6px $btn-shadow-inset, 0 6px $btnShadowColor;
-
+    
     @media screen and (max-width: 425px) {
         border: 10px solid $btnBorderColor !important;
 
@@ -175,9 +286,11 @@ button {
     height: 40%;
     cursor: pointer;
     border-radius: 50%;
-    transition: filter .1s ease-in;
+    transition: all .1s ease-in;
 
     &-paper {
+        transition: all .1s ease-in;
+
         @include btn-settings($paper-btn-border, $paper-btn-shadow);
         background: url('../images/icon-paper.svg') center no-repeat, #fff !important;
         background-size: 50% !important;
@@ -199,9 +312,25 @@ button {
         background-size: 50% !important;
     }
 
+    &-lizard {
+        display: none;
+        @include btn-settings($lizard-btn-border, $lizard-btn-shadow);
+
+        background: url('../images/icon-lizard.svg') center no-repeat, #fff !important;
+        background-size: 50% !important;
+    }
+
+    &-spock {
+        display: none;
+        @include btn-settings($spock-btn-border, $spock-btn-shadow);
+
+        background: url('../images/icon-spock.svg') 57% 50% no-repeat, #fff !important;
+        background-size: 50% !important;
+    }
+
     &:hover {
         animation: mouseIn 3s ease-in-out infinite;
-        filter: brightness(110%);
+        filter: brightness(110%) saturate(150%);
     }
 }
 
@@ -209,6 +338,7 @@ button {
 // Result Wrapper
 
 .result-wrapper {
+    position: relative;
     display: none;
 
     grid-template-columns: repeat(2, 1fr);
@@ -377,7 +507,7 @@ button {
 
 .btn-result {
     position: relative;
-    align-self: initial;
+    align-self: center !important;
 
     width: 40%;
     height: 40%;
@@ -393,7 +523,6 @@ button {
         transform: initial;
         width: 50%;
         height: 50%;
-    
     }
 }
 
@@ -419,7 +548,7 @@ button {
 }
 
 .is-winner {
-    animation: animateWinner 5s ease-in-out .5s infinite both reverse;
+    animation: animateWinner 5s ease-in-out .1s infinite both reverse;
     // box-shadow: 0 0 0 50px rgba(255,255,255,.05),
     // 0 0 0 90px  rgba(255,255,255,.03),
     // 0 0 0 150px  rgba(255,255,255, .01);
@@ -604,4 +733,29 @@ button {
             width: 100%;
         }
     }
+}
+
+// Counter
+
+#countdown {
+    display: none;
+    position: relative;
+}
+
+@keyframes count {
+    0% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+.count {
+    font-size: 5rem;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    animation: count 0.1s cubic-bezier(0.1,0.1,1,1) 1;
 }

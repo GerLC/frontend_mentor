@@ -45,6 +45,130 @@ button {
   height: 100%;
 }
 
+@-webkit-keyframes twirl {
+  2.5% {
+    -webkit-transform: rotateY(1turn);
+            transform: rotateY(1turn);
+  }
+  5% {
+    -webkit-transform: rotateY(2turn);
+            transform: rotateY(2turn);
+  }
+  10% {
+    -webkit-transform: rotateY(3turn);
+            transform: rotateY(3turn);
+  }
+  20% {
+    -webkit-transform: rotateY(4turn);
+            transform: rotateY(4turn);
+  }
+  40% {
+    -webkit-transform: rotateY(5turn);
+            transform: rotateY(5turn);
+  }
+  70%, 100% {
+    -webkit-transform: rotateY(6turn);
+            transform: rotateY(6turn);
+  }
+}
+
+@keyframes twirl {
+  2.5% {
+    -webkit-transform: rotateY(1turn);
+            transform: rotateY(1turn);
+  }
+  5% {
+    -webkit-transform: rotateY(2turn);
+            transform: rotateY(2turn);
+  }
+  10% {
+    -webkit-transform: rotateY(3turn);
+            transform: rotateY(3turn);
+  }
+  20% {
+    -webkit-transform: rotateY(4turn);
+            transform: rotateY(4turn);
+  }
+  40% {
+    -webkit-transform: rotateY(5turn);
+            transform: rotateY(5turn);
+  }
+  70%, 100% {
+    -webkit-transform: rotateY(6turn);
+            transform: rotateY(6turn);
+  }
+}
+
+.bonus .scoreboard__logo {
+  content: url(../images/logo-bonus.svg);
+}
+
+.bonus .main-wrapper {
+  background: url(../images/bg-pentagon.svg) no-repeat center;
+  background-size: 70%;
+}
+
+.bonus .btn {
+  position: relative;
+  width: 30%;
+  height: 25%;
+}
+
+.bonus .btn-paper {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
+}
+
+.bonus .btn-rock {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+.bonus .btn-scissor {
+  -ms-flex-item-align: initial;
+      -ms-grid-row-align: initial;
+      align-self: initial;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+.bonus .btn-lizard {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  display: initial;
+}
+
+.bonus .btn-spock {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  display: initial;
+}
+
+@media screen and (max-width: 800px) {
+  .bonus .btn {
+    border-width: 6px !important;
+  }
+}
+
+.bonus .modal-body img {
+  content: url(../images/image-rules-bonus.svg);
+}
+
 .scoreboard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,6 +200,12 @@ button {
 
 .scoreboard__logo {
   position: relative;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.scoreboard__logo:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 425px) {
@@ -107,6 +237,32 @@ button {
   font-weight: 700;
 }
 
+@-webkit-keyframes zoomOut {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: .1;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: .1;
+  }
+}
+
 .main-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,6 +275,8 @@ button {
   margin: 5% auto;
   background: url(../images/bg-triangle.svg) no-repeat center;
   background-size: 60%;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
 }
 
 @media screen and (max-width: 425px) {
@@ -176,13 +334,13 @@ button {
   height: 40%;
   cursor: pointer;
   border-radius: 50%;
-  -webkit-transition: -webkit-filter .1s ease-in;
-  transition: -webkit-filter .1s ease-in;
-  transition: filter .1s ease-in;
-  transition: filter .1s ease-in, -webkit-filter .1s ease-in;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
 }
 
 .btn-paper {
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
   border: 16px solid #4865f4 !important;
   -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(86, 113, 245, 0.7);
           box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(86, 113, 245, 0.7);
@@ -226,14 +384,45 @@ button {
   }
 }
 
+.btn-lizard {
+  display: none;
+  border: 16px solid #834fe3 !important;
+  -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(140, 93, 229, 0.7);
+          box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(140, 93, 229, 0.7);
+  background: url("../images/icon-lizard.svg") center no-repeat, #fff !important;
+  background-size: 50% !important;
+}
+
+@media screen and (max-width: 425px) {
+  .btn-lizard {
+    border: 10px solid #834fe3 !important;
+  }
+}
+
+.btn-spock {
+  display: none;
+  border: 16px solid #52bed1 !important;
+  -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(64, 185, 206, 0.7);
+          box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(64, 185, 206, 0.7);
+  background: url("../images/icon-spock.svg") 57% 50% no-repeat, #fff !important;
+  background-size: 50% !important;
+}
+
+@media screen and (max-width: 425px) {
+  .btn-spock {
+    border: 10px solid #52bed1 !important;
+  }
+}
+
 .btn:hover {
   -webkit-animation: mouseIn 3s ease-in-out infinite;
           animation: mouseIn 3s ease-in-out infinite;
-  -webkit-filter: brightness(110%);
-          filter: brightness(110%);
+  -webkit-filter: brightness(110%) saturate(150%);
+          filter: brightness(110%) saturate(150%);
 }
 
 .result-wrapper {
+  position: relative;
   display: none;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
@@ -512,9 +701,9 @@ button {
 
 .btn-result {
   position: relative;
-  -ms-flex-item-align: initial;
-      -ms-grid-row-align: initial;
-      align-self: initial;
+  -ms-flex-item-align: center !important;
+      -ms-grid-row-align: center !important;
+      align-self: center !important;
   width: 40%;
   height: 40%;
   background-color: rgba(0, 0, 0, 0.2);
@@ -565,7 +754,7 @@ button {
 }
 
 .is-winner {
-  animation: animateWinner 5s ease-in-out .5s infinite both reverse;
+  animation: animateWinner 5s ease-in-out .1s infinite both reverse;
   z-index: -1;
 }
 
@@ -814,5 +1003,46 @@ button {
   .modal-body img {
     width: 100%;
   }
+}
+
+#countdown {
+  display: none;
+  position: relative;
+}
+
+@-webkit-keyframes count {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes count {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.count {
+  font-size: 5rem;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  -webkit-animation: count 0.1s cubic-bezier(0.1, 0.1, 1, 1) 1;
+          animation: count 0.1s cubic-bezier(0.1, 0.1, 1, 1) 1;
 }
 /*# sourceMappingURL=styles.css.map */
