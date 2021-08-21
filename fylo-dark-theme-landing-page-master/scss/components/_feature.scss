@@ -1,0 +1,49 @@
+@use '../util' as *;
+
+.feature {
+    margin: 5rem 0;
+
+    .grid-container {
+        grid-template: repeat(4, 1fr) / 1fr;
+	    gap: rem(100);
+    }
+
+    &__item {
+        gap: 3rem;
+    }
+
+    &__img {
+        img {
+            width: 75%;
+            height: auto;
+        }
+    }
+
+    &__body {
+        padding: 0 2rem;
+    }
+
+
+    @include breakpoint(medium) {
+
+        .grid-container {
+            grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        }
+
+        &__body {
+            padding: 0 5rem;
+        }
+	}
+
+    @include breakpoint(large) {
+        margin: 0 6rem;
+
+        .grid-container {
+            grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        }
+
+        &__body {
+            padding: 0 3rem;
+        }
+	}
+}

@@ -1,0 +1,75 @@
+@use '../util/' as *;
+
+.testimonial {
+    position: relative;
+    margin: 2rem;
+
+    .grid-container {
+        grid-template: repeat(3, 1fr) / 1fr;
+	    gap: rem(50);
+    }
+
+    .quote {
+        position: relative;
+        right: rem(168);      
+        bottom: rem(-10);        
+        z-index: -1;
+
+        width: 10%;
+    }
+
+    &__card {
+        background: var(--dark-t-bg);
+        border-radius: rem(8);
+        padding: 2rem;
+    }
+
+    &__text {
+        margin: 1rem 0;
+        text-align: start;
+    }
+
+    &__footer {
+
+        p {
+            font-size: rem(12);
+            line-height: 2;
+        }
+        
+        img {
+            border-radius: 50%;
+            margin-right: rem(15);
+            width: 15%;
+            height: auto;
+
+        }
+    }
+
+    @include breakpoint(medium) {
+        .grid-container {
+            grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        }
+
+        .quote {
+            position: relative;
+            right: rem(498);      
+            bottom: rem(-10);        
+            width: 5%;
+        }
+
+
+	}
+
+    @include breakpoint(large) {
+        .grid-container {
+            grid-template: 1fr / repeat(3, 1fr);
+        }
+
+        .quote {
+            position: relative;
+            right: rem(595);      
+        }
+
+
+	}
+}

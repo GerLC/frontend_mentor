@@ -1,0 +1,56 @@
+@use '../util' as *;
+
+.header {
+	position: relative;
+	
+	nav {
+	  position: relative;
+	  background: var(--dark-bg);
+	  padding-block: 1.0625rem;
+	}
+  
+	&__logo {
+  
+	  img {
+		width: 7rem;
+	  }
+  
+	}
+  
+	&__links {
+		justify-self: flex-end;
+
+	  a {
+		cursor: pointer;
+		position: relative;
+		color: var(--white-text);
+		opacity: .5;
+  
+		&:not(:last-child){
+		  margin-right: 25px;
+		}
+  
+		&:hover {
+			opacity: 1;
+			text-decoration: underline;
+		}
+		
+	  }
+	}
+
+
+	
+	@include breakpoint(medium) {
+		nav {
+			padding: 3.5rem;
+		  }
+		
+		  &__logo {
+		
+			img {
+			  width: 10rem;
+			}
+		
+		  }
+	}
+  }

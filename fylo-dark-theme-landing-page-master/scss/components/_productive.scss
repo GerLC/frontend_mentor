@@ -1,0 +1,103 @@
+@use '../util/' as *;
+
+.productive {
+    position: relative;
+    flex-flow: column;
+    margin: 10rem 0;
+    
+    &__img {
+        img {
+            width: 75%;
+            height: auto;
+        }
+    }
+
+    &__text {
+        margin: 2rem 0;
+        padding: 0 2.2rem;
+
+        text-align: start;
+    }
+
+    &__link {
+        width: fit-content;
+        color: var(--cyan-btn-bg);
+        opacity: .8;
+        cursor: pointer;
+
+        .p-icon {
+            margin-left: rem(8);
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 24px;
+            right: 0;
+            bottom: 18px;
+
+            width: 37%;
+            height: 3px;        
+            background: var(--cyan-btn-bg);
+
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;        
+        }
+
+        &:hover {
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        flex-flow: row;
+        padding: 0 3rem;
+
+        .p-heading {
+            width: 70%;
+            font-size: rem(35);
+        }
+
+        &__img {
+            flex: 50%;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    
+        &__text {
+            flex: 50%;
+            align-self: center;
+            margin: 2rem 0;
+            padding: 0 2.2rem;
+            text-align: start;
+
+            p {
+                margin: 1rem 0;
+            }
+        }
+
+        &__link {
+
+            &::after {
+                content: '';
+                display: none;  
+            }
+
+            &:hover {
+                text-decoration: underline;
+    
+            }
+        }
+    }
+
+    @include breakpoint(large) {
+        padding: 0 5rem;
+    }
+}

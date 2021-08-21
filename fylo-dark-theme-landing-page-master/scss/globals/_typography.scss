@@ -1,0 +1,44 @@
+@use '../util' as *;
+
+h1,
+h2,
+h3 {
+	margin-top: 0;
+	line-height: 1.1;
+	font: var(--font-raleway);
+	font-weight: var(--font-bold);
+}
+
+h1 {
+	font-size: rem(30);
+	margin: rem(16) 0;
+	
+	@include breakpoint(large) {
+		font-size: rem(34);
+	}
+}
+
+h2 {
+	font-size: rem(24);
+	margin-bottom: rem(24);
+}
+
+a,
+a:visited,
+a:active {
+	text-decoration: none;
+}
+
+p {
+	font-size: rem(16);
+	font-weight: var(--font-normal);
+	line-height: 1.75rem;
+	opacity: .8;
+}
+
+cite {
+	text-decoration: none;
+	text-align: start;
+	font: var(--font-raleway);
+	font-weight: var(--font-bold);
+}

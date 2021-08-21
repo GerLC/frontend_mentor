@@ -1,0 +1,81 @@
+@use '../util' as *;
+
+.hero {
+    min-height: rem(650);
+    margin-bottom: 2rem;
+    background: url(../images/bg-curvy-mobile.svg) center no-repeat, linear-gradient(var(--dark-bg) 60%, var(--dark-main-bg) 40%);
+    background-size: contain;
+
+    .container {
+        padding: 3rem 1.5625rem;
+    }
+
+    &__img {
+        margin: 0 auto;
+
+        img {
+            width: 90%;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        
+        p {
+            padding: 0 2rem;
+        }
+    }
+
+    @include breakpoint(medium) {
+        background: url(../images/bg-curvy-mobile.svg) center bottom no-repeat, var(--dark-bg);
+        background-size: contain;
+
+        .container {
+            max-width: rem(724);
+            padding: 1rem 1.5625rem;
+        }
+
+        &__img {
+            margin: 0 auto;
+    
+            img {
+                width: 50%;
+            }
+        }	
+
+        &__text {
+            
+            p {
+                padding: 0 4rem;
+            }
+        }
+    }
+
+	@include breakpoint(large) {
+        min-height: rem(900);
+        background: url(../images/bg-curvy-desktop.svg) center bottom no-repeat, var(--dark-bg);
+        background-size: contain;
+
+        .container {
+            max-width: rem(800);
+            padding: 1rem 1.5625rem;
+        }
+
+        &__img {
+            margin: 0 auto;
+    
+            img {
+                width: 80%;
+            }
+        }	
+
+
+        &__text {
+            
+            p {
+                padding: 0 8rem;
+            }
+        }
+    
+    }
+}
