@@ -7,8 +7,8 @@
 
 <ng-template #haveCountries>
     <div class="grid-container">
-        <div *ngFor='let country of countries' class="grid" [@filterAnimation]="country">
-            <app-country-card [country]='country' [@filterAnimation]="country"></app-country-card>
+        <div *ngFor='let country of countries' class="grid" [@filterAnimation]="country.length" [@expand]>
+            <app-country-card [country]='country'></app-country-card>
         </div>
     </div>
 </ng-template>

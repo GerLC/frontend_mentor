@@ -1,20 +1,22 @@
 // https://icons8.com/cssload 
 
 .cssload-dots {
-	background-color: rgba(0, 0, 0, .5);
     width: 0;
     height: 0;
     position: absolute;
 	top: 0;
 	left: 0;
-	bottom: 0;
+	bottom: -10rem;
 	right: 0;
 	margin: auto;
+	background-color: rgba(0, 0, 0, .5);
 	filter: url(#goo);
 		-o-filter: url(#goo);
 		-ms-filter: url(#goo);
 		-webkit-filter: url(#goo);
 		-moz-filter: url(#goo);
+
+	
 }
 
 .cssload-dot {

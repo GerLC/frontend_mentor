@@ -4,7 +4,7 @@
 </div>
 
 <ng-container *ngIf ='country'>
-    <section class="country">
+    <section class="country" [@expand]>
         <div class="country__img">
             <img src="{{country.flag}}" alt="Flag of {{country.name}}">
         </div>

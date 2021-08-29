@@ -2,11 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountryService } from 'src/app/modules/core/services/countries/country.service';
 import { switchMap } from 'rxjs/operators';
+import { expand, flyInOut } from '../../../../shared/animations/route-transition-animations';
 
 @Component({
   selector: 'app-country-details',
   templateUrl: './country-details.component.html',
-  styleUrls: ['./country-details.component.scss']
+  styleUrls: ['./country-details.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+  },
+  animations: [
+    flyInOut(),
+    expand(),
+  ]
 })
 export class CountryDetailsComponent implements OnInit {
 

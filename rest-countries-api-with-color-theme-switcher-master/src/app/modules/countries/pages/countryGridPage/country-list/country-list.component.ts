@@ -11,12 +11,19 @@ import {
   query,
   sequence,
 } from '@angular/animations';
+import { expand, flyInOut } from '../../../../shared/animations/route-transition-animations';
 
 @Component({
   selector: 'app-country-list',
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+  },
   animations: [
+    flyInOut(),
+    expand(),
     trigger('filterAnimation', [
       transition(':enter, * => 0, * => -1', []),
       transition(':increment', [
