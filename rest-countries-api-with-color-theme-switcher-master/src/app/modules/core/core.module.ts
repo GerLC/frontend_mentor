@@ -4,7 +4,6 @@ import { SharedModule } from '../shared/shared.module';
 import { CountryService } from './services/countries/country.service';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpaInterceptor } from './interceptors/http.interceptor';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { LoadingService } from './services/loading/loading.service';
 
@@ -15,7 +14,6 @@ import { LoadingService } from './services/loading/loading.service';
     SharedModule,
   ],
   providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: HttpaInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
     CountryService,
     LoadingService,
