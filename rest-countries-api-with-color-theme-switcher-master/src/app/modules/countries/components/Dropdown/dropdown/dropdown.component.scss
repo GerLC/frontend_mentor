@@ -1,0 +1,16 @@
+@use '../../../../../../styles/partials/breakpoint' as *;
+
+.dropdown {
+    opacity: 0.75;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 20px;
+    
+    @include for_breakpoint(mobile) {
+        font-size: .75em;
+        margin: 2rem 0 1rem;
+    }
+
+    @include for_breakpoint(tablet) {
+        font-size: .9em;
+        margin: 2rem 0 1rem;
+    }
+}

@@ -1,0 +1,34 @@
+@use '../../../../../../styles/partials/breakpoint' as *;
+
+.filter-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 2rem;
+
+    @include for_breakpoint(mobile) {
+        flex-flow: column;
+    }
+
+    @include for_breakpoint(tablet) {
+        flex-flow: column;
+    }
+} 
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 4rem;
+
+    @include for_breakpoint(mobile) {
+        grid-template-columns: 1fr;
+    }
+
+    @include for_breakpoint(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}

@@ -1,0 +1,22 @@
+$media_queries : (
+    'mobile'    : unquote("only screen and (max-width: 475px)"),
+    'tablet' : unquote("only screen and (min-width: 670px) and (max-width: 1110px)"),    
+    'desktop'   : unquote("only screen and (min-width: 1440px)"),
+);
+
+@mixin for_breakpoint($breakpoints) {
+    $conditions : ();
+    @each $breakpoint in $breakpoints {
+        // If the key exists in the map
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+
+}

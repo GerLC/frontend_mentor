@@ -1,0 +1,16 @@
+<div class="filter-wrapper">
+    <app-search-form (searchFilter)='searchFilter($event)'></app-search-form>
+    <app-dropdown (region)='dropdownFilter($event)'></app-dropdown>
+</div>
+
+<ng-container *ngTemplateOutlet="haveCountries"></ng-container>
+
+<ng-template #haveCountries>
+    <div class="grid-container">
+        <div *ngFor='let country of countries' class="grid" [@filterAnimation]="country">
+            <app-country-card [country]='country' [@filterAnimation]="country"></app-country-card>
+        </div>
+    </div>
+</ng-template>
+
+<!-- <ng-template #notCountries><span>No results</span></ng-template> -->

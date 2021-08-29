@@ -1,0 +1,73 @@
+<div class="top">
+    <app-button [buttonConfig]="textBtnConfig" [routerLink]="['/']"
+    (backBtnClickEmt)="onClickEventReceived($event)"></app-button>
+</div>
+
+<ng-container *ngIf ='country'>
+    <section class="country">
+        <div class="country__img">
+            <img src="{{country.flag}}" alt="Flag of {{country.name}}">
+        </div>
+
+        <div class="country__content">
+            <h2>{{country.name}}</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <p><strong>Native Name:</strong> {{country.nativeName}}</p>
+                    <p><strong>Population:</strong> {{country.population}}</p>
+                    <p><strong>Region:</strong> {{country.region}}</p>
+                    <p><strong>Sub Region:</strong> {{country.subregion}}</p>
+                    <p><strong>Capital:</strong> {{country.capital}}</p>
+                </div>
+                <div class="grid-item">
+                    <p>
+                        <strong>
+                            Top Level Domain:
+                        </strong>
+                        <span *ngFor='let domain of country.topLevelDomain; let isLast=last'>
+                            {{domain}}{{isLast ? '' : ', '}}
+                        </span>
+                    </p>
+                    <p>
+                        <strong>
+                            Currencies: 
+                        </strong>
+                        <span *ngFor='let currency of country.currencies; let isLast=last'>
+                            {{currency.name}}{{isLast ? '' : ', '}}
+                        </span>
+                    </p>
+                    <p>
+                        <strong>
+                            Languages:
+                        </strong>
+                        <span *ngFor='let languages of country.languages; let isLast=last'>
+                            {{languages.name}}{{isLast ? '' : ', '}}
+                        </span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <strong class="border-title">
+                        Border Countries:
+                    </strong>
+                    <div class='border-items'>
+                        
+                        <!-- <span *ngFor='let border of country.borders'>{{border}}</span> -->
+
+                        <span *ngFor='let border of country.borders'>
+                            <app-button [buttonConfig]="borderBtnConfig"
+                            (borderBtnClickEmt)="navigate(border)">{{border}}</app-button>
+                        </span>
+
+                        <span *ngIf="(country.borders).length < 1">
+                            None
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+</ng-container>

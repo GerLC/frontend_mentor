@@ -1,0 +1,32 @@
+.card {
+    max-width: 20rem;
+    min-height: 18rem;
+
+    border-radius: 6px;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 20px;
+
+    transition: all .25s ease-in;
+
+    img {
+        object-fit: cover; 
+        height: fit-content;
+        min-height: 180px;
+        max-height: 180px;
+    }
+
+    &__content {
+        padding: .5rem;
+        line-height: 1.75;
+
+        h3 {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        filter: brightness(105%);
+        transform: scale(1.01);
+    }
+}

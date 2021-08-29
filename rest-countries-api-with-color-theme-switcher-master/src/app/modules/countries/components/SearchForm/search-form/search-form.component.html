@@ -1,0 +1,5 @@
+<mat-form-field class="form-field" appearance="outline" floatLabel="never">
+  <mat-label>Search for a country...</mat-label>
+  <input matInput [(ngModel)]='value' (ngModelChange)="onChange(value)" placeholder="Type the country name">
+  <mat-icon matPrefix style='margin-right: 4px;'>search &nbsp;</mat-icon>
+</mat-form-field>

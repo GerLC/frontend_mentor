@@ -1,0 +1,12 @@
+<mat-toolbar class="container">
+    <h1>Where in the world?</h1>
+    <span class="spacer"></span>
+    <mat-slide-toggle [checked]="isDarkMode" (change)='onDarkMode($event)'>
+        <mat-icon aria-hidden="false" aria-label="theme icon">bedtime &nbsp;</mat-icon>
+        <span class="text">Dark Mode</span>
+    </mat-slide-toggle>
+    <!-- <button mat-flat-button class="btn" (change)='onDarkMode($event)' aria-label="">
+        <mat-icon aria-hidden="false" aria-label="theme icon">bedtime</mat-icon>
+        <span class="aligned-with-icon">Dark Mode</span>
+    </button> -->
+</mat-toolbar>

@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '~@angular/material' as mat;
 // Plus imports for other components in your app.
+@use '~@angular/material' as mat;
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -13,8 +11,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$rest-countries-api-with-color-theme-switcher-master-primary: mat.define-palette(mat.$indigo-palette);
-$rest-countries-api-with-color-theme-switcher-master-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$rest-countries-api-with-color-theme-switcher-master-primary: mat.define-palette(mat.$grey-palette);
+$rest-countries-api-with-color-theme-switcher-master-accent: mat.define-palette(mat.$grey-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $rest-countries-api-with-color-theme-switcher-master-warn: mat.define-palette(mat.$red-palette);
@@ -29,31 +27,35 @@ $rest-countries-api-with-color-theme-switcher-master-theme: mat.define-light-the
   )
 ));
 
+$rest-countries-api-with-color-theme-switcher-master-theme-dark: mat.define-dark-theme((
+  color: (
+    primary: $rest-countries-api-with-color-theme-switcher-master-primary,
+    accent: $rest-countries-api-with-color-theme-switcher-master-accent,
+    warn: $rest-countries-api-with-color-theme-switcher-master-warn,
+  )
+));
+
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($rest-countries-api-with-color-theme-switcher-master-theme);
+.theme-light {
+  @include mat.all-component-themes($rest-countries-api-with-color-theme-switcher-master-theme);
 
-/* You can add global styles to this file, and also import other style files */
+  mat-form-field {
+    background-color: hsl(0, 0%, 100%)
+  }
 
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: inherit;
+  input {
+    color: hsl(0, 0%, 52%);
+  }
+
 }
 
-html, body { 
-  min-height: 100vh; 
-  box-sizing: border-box;
-}
+.theme-dark {
+  @include mat.all-component-themes($rest-countries-api-with-color-theme-switcher-master-theme-dark);
 
-body { 
-  margin: 0; 
-  font-family: 'Nunito Sans', sans-serif;
+  mat-form-field {
+    background-color: hsl(209, 23%, 22%);
+  }
 }
-
-:focus { 
-  outline:none;
- }

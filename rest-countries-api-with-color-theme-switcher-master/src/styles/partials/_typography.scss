@@ -1,0 +1,10 @@
+@use 'breakpoint' as *;
+// 300;600;800
+
+h1, h2, h3 {
+    font-weight: 800 !important;
+}
+
+p, span {
+    font-weight: 300 ;
+}
