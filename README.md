@@ -30,7 +30,4 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 | Tags  | Challanges | Live|  Code|  Type| 
 | --- | :---: |  -- | --  |  -- |
 | HTML--CSS--JS   | rock-paper-scissors-master | [Live](https://gerlc.github.io/frontend_mentor/rock-paper-scissors-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/rock-paper-scissors-master) |Free|
-| Angular   | rest-countries-api-with-color-theme-switcher-master | In Progress | [Code](https://github.com/GerLC/frontend_mentor/tree/main/rest-countries-api-with-color-theme-switcher-master) |Free|
-
-<!-- [Live](https://gerlc.github.io/frontend_mentor/rest-countries-api-with-color-theme-switcher-master) 
--->
+| Angular   | rest-countries-api-with-color-theme-switcher-master | [Live](https://gerlc.github.io/frontend_mentor/rest-countries-api-with-color-theme-switcher-master)  | [Code](https://github.com/GerLC/frontend_mentor/tree/main/rest-countries-api-with-color-theme-switcher-master) |Free|

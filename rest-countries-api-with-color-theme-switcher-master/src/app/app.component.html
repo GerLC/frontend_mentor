@@ -3,4 +3,13 @@
 </header>
 <main class="container">
     <router-outlet></router-outlet>
+    <ng-container *ngIf="loadingService.isLoading$ | async">
+        <div class="cssload-dots">
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+        </div>    
+    </ng-container>
 </main>

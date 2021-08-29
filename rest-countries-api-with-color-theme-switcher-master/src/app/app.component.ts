@@ -1,11 +1,12 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostBinding, Inject, Renderer2 } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { ChangeDetectionStrategy, Component, HostBinding, Inject, Renderer2 } from '@angular/core';
+import { LoadingService } from './modules/core/services/loading/loading.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'rest-countries-api-with-color-theme-switcher-master';
@@ -14,7 +15,8 @@ export class AppComponent {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    public loadingService: LoadingService
   ) {}
 
   ngOnInit(): void {
