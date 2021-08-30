@@ -12,7 +12,7 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 | HTML--CSS      |  intro-component-with-signup-form-master | [Live](https://gerlc.github.io/frontend_mentor/intro-component-with-signup-form-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/intro-component-with-signup-form-master) |Free|
 | HTML--CSS      |  order-summary-component-main | [Live](https://gerlc.github.io/frontend_mentor/order-summary-component-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/order-summary-component-main) |Free|
 | HTML--CSS--JS  |  ping-coming-soon-page-master | [Live](https://gerlc.github.io/frontend_mentor/ping-coming-soon-page-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/ping-coming-soon-page-master) |Free|
-| HTML--CSS--JS  |  faq-accordion-card-main | [Live](https://gerlc.github.io/frontend_mentor/faq-accordion-card-mai) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/faq-accordion-card-main) |Free|
+| HTML--CSS--JS  |  faq-accordion-card-main | [Live](https://gerlc.github.io/frontend_mentor/faq-accordion-card-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/faq-accordion-card-main) |Free|
 
 
 ### Junior
