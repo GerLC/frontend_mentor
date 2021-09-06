@@ -12,7 +12,7 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 | HTML--CSS      |  intro-component-with-signup-form-master | [Live](https://gerlc.github.io/frontend_mentor/intro-component-with-signup-form-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/intro-component-with-signup-form-master) |Free|
 | HTML--CSS      |  order-summary-component-main | [Live](https://gerlc.github.io/frontend_mentor/order-summary-component-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/order-summary-component-main) |Free|
 | HTML--CSS--JS  |  ping-coming-soon-page-master | [Live](https://gerlc.github.io/frontend_mentor/ping-coming-soon-page-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/ping-coming-soon-page-master) |Free|
-| HTML--CSS--JS  |  faq-accordion-card-main | [Live](https://gerlc.github.io/frontend_mentor/faq-accordion-card-mai) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/faq-accordion-card-main) |Free|
+| HTML--CSS--JS  |  faq-accordion-card-main | [Live](https://gerlc.github.io/frontend_mentor/faq-accordion-card-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/faq-accordion-card-main) |Free|
 
 
 ### Junior
@@ -30,4 +30,4 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 | Tags  | Challanges | Live|  Code|  Type| 
 | --- | :---: |  -- | --  |  -- |
 | HTML--CSS--JS   | rock-paper-scissors-master | [Live](https://gerlc.github.io/frontend_mentor/rock-paper-scissors-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/rock-paper-scissors-master) |Free|
-| Angular   | rest-countries-api-with-color-theme-switcher-master | [Live](https://gerlc.github.io/frontend_mentor/rest-countries-api-with-color-theme-switcher-master)  | [Code](https://github.com/GerLC/frontend_mentor/tree/main/rest-countries-api-with-color-theme-switcher-master) |Free|
+| Angular   | rest-countries-api-with-color-theme-switcher-master | [Live](https://friendly-wing-938fa1.netlify.app/)  | [Code](https://github.com/GerLC/frontend_mentor/tree/main/rest-countries-api-with-color-theme-switcher-master) |Free|
