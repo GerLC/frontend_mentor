@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.card__form {
+
+    input {
+        width: 100%;
+        padding: .5em;
+
+        @include rounded-corner(4px);
+    }
+
+    
+}

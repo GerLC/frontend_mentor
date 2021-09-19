@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.card {
+    padding: 1.25rem;
+    background: #fff;
+    box-shadow: 5px 10px 50px hsl(0, 0%, 81%);
+
+    @include rounded-corner(10px);
+
+    // Shorten Result(s)
+    &__result {
+        padding: 0;
+        margin: 1.5rem 0;
+        text-align: initial;
+    }
+
+    &__heading {
+        padding: .7rem;
+        color: hsl(var(--clr-primary-violet));
+    }
+
+    &__divider {
+        width: 100%;
+        height: 3px;
+        background-color: hsl(var(--clr-neutral-lightgray));
+    }
+
+    &__content {
+        padding: .7rem;
+        color: hsl(var(--clr-primary-cyan));
+
+        button {
+            margin-top: .7rem;
+            padding: .4em 2em;
+        }
+    }
+
+
+    // Shorten Form
+    &--purple {
+        background: url(../../images/bg-shorten-mobile.svg) 200% -25% no-repeat, hsl(var(--clr-primary-violet));
+        background-size: auto;
+    }
+
+}

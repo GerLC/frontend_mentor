@@ -1,0 +1,65 @@
+.feature {
+    padding-block: 4rem;
+    background: linear-gradient(#fff 11%, hsl(var(--clr-neutral-lightgray)) 0);
+
+    .button {
+        width: 100%;
+    }
+
+    p {
+        line-height: 1.8;
+    }
+
+    :is(h2, h3) {
+        margin-bottom: 1.25rem;
+    }
+
+    &__heading {
+        margin-block: 3.5rem;
+    }
+
+    &__content {
+        margin-block: 2.5rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__divider {
+        width: 7.5px;
+        height: 70px;
+        background: hsl(var(--clr-primary-cyan));
+    }
+
+    // Article
+    .article {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+        background: #fff;
+        border-radius: 5px;
+        padding: 1.3rem;
+
+        min-height: 16rem;
+        max-height: min-content;
+    }
+
+    figure{
+        position: relative;
+        top: -2.5rem;
+        display: inline-block;
+        border-radius: 50%;
+        padding: 15px;
+        background: hsl(var(--clr-primary-violet));
+
+    }
+    
+    figure img{
+       display: block;
+       height: auto;
+    }
+
+}

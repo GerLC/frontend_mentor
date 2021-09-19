@@ -1,0 +1,16 @@
+@use 'breakpoints' as *;
+
+@mixin mq($key) {
+
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin rounded-corner($arc) {
+  -moz-border-radius: $arc;
+  -webkit-border-radius: $arc;
+  border-radius: $arc;  
+}

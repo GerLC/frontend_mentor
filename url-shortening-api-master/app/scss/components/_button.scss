@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.button {
+    padding: .6em 2em;
+    
+    outline: none;
+    border: none;
+    background: hsl(var(--clr-primary-cyan));
+
+    cursor: pointer;
+
+    @include rounded-corner(4px);
+
+}
+
+.rounded-button {
+    @include rounded-corner(50px);
+}

@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+.hero {
+
+    .container {
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    &__image {
+        padding-left: 1.5rem;
+        img {
+            max-width: 140%;            
+            height: auto;
+        }
+    }
+
+    &__text {
+        padding: 0 1rem;
+        margin-block: 2rem;
+
+        :is(p, h1, button) {
+            margin-block: .8rem;
+        }
+    }
+
+    &__cta {
+        @include rounded-corner(50px);
+    }
+}

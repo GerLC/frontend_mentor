@@ -1,0 +1,49 @@
+body {
+  font-size: var(--fs-300);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: hsl(var(--clr-neutral-violet));
+  letter-spacing: -.5px;
+  text-align: center;
+}
+ 
+h1, h2, h3, h4 { 
+  font-weight: 700;
+  font-stretch: 100%;
+  line-height: 1.1;
+  color: hsl(var(--clr-neutral-blue));
+}
+
+h1 {
+  font-size: var(--fs-600);
+}
+
+a {
+  color: var(--clr-primary-400);
+
+  &:hover,
+  &:focus {
+    color: var(--clr-primary-500);
+    text-decoration: none; 
+  }
+}
+
+p:not([class]),
+ul:not([class]),
+li:not([class]) {
+  max-width: 60ch;
+}
+
+.card__result p {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.button {
+  color: hsl(0, 0, 100);
+  font-weight: 700;  
+}

@@ -1,0 +1,32 @@
+// ### Primary
+
+// - Cyan: hsl(180, 66%, 49%)
+// - Dark Violet: hsl(257, 27%, 26%)
+
+// ### Secondary
+
+// - Red: hsl(0, 87%, 67%)
+
+// ### Neutral
+
+// - Gray: hsl(0, 0%, 75%)
+// - Grayish Violet: hsl(257, 7%, 63%)
+// - Very Dark Blue: hsl(255, 11%, 22%)
+// - Very Dark Violet: hsl(260, 8%, 14%)
+
+$colors: (
+  primary: ( 
+    cyan: 180 66% 49%,
+    violet: 257 27% 26%,
+  ),
+  secondary: ( 
+    red: 0 87% 67%,
+  ),
+  neutral: (
+    gray: 0 0% 75%,
+    lightgray: 225 33% 95%,
+    violet: 257 7% 63%,
+    blue: 255 11% 22%,
+    dark-violet: 260 8% 14%,
+  )
+);
