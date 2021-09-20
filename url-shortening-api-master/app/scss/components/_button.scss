@@ -11,6 +11,11 @@
 
     @include rounded-corner(4px);
 
+    &:hover {
+        filter: brightness(101%);
+        opacity: .7;
+    }
+
 }
 
 .rounded-button {

@@ -10,12 +10,33 @@
     }
 
     &__logo {
+        margin-right: 1rem;
 
         img {
           width: 100%;
           height: auto;
         }
     
+    }
+
+    &__links {
+        align-self: flex-start;
+    }
+
+    &__item {
+        font-weight: 700;
+        margin: 0 1rem;
+
+        &:hover {
+            color: hsl(var(--clr-neutral-blue));
+        }
+    }
+
+    &__cta {
+
+        &:hover {
+            color: #fff;
+        }
     }
 
     &__toggle { // Mobile Menu Toggle

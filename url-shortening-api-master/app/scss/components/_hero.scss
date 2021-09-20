@@ -4,15 +4,17 @@
 
     .container {
         padding: 0;
-        overflow: hidden;
     }
     
     &__image {
         padding-left: 1.5rem;
+
         img {
             max-width: 140%;            
             height: auto;
+
         }
+
     }
 
     &__text {
@@ -22,9 +24,35 @@
         :is(p, h1, button) {
             margin-block: .8rem;
         }
+
     }
 
-    &__cta {
-        @include rounded-corner(50px);
-    }
 }
+
+@include mq(small) {
+
+    .hero {
+        margin-block: 4rem;
+
+        .container {
+            flex-flow: row-reverse;
+        }
+        
+        &__image {
+            padding-left: 4rem;
+        }
+
+
+        &__text {
+            text-align: initial;
+    
+            :is(p) {
+                padding-right: 6em;
+            }
+
+            :is(h1) {
+                font-size: var(--fs-700);
+            }
+        }
+    }
+}    

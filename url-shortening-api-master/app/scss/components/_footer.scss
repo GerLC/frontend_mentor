@@ -1,3 +1,4 @@
+@use '../abstracts' as *;
 
 .footer {
     position: relative;
@@ -56,4 +57,52 @@
     }
 
 
+    @include mq(small) {
+        padding-block: 4rem;
+        min-height: max-content;
+
+        .container {
+            flex-flow:  row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &__logo {
+
+        }
+
+        &__wrapper {
+            width: 70%;
+            flex-flow: row;
+            justify-content: space-evenly;
+            align-items: flex-start;
+
+            margin: 0;
+        }
+
+
+        &__links {
+            align-items: flex-start;
+            margin: 0;
+
+            h4 {
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+    
+            a {
+                line-height: 2;
+                text-align: start;
+            }
+    
+            > div {
+                align-items: flex-start;
+            }
+        }
+    
+        &__social {
+            margin-top: 0;
+        }
+
+    }
 }

@@ -42,9 +42,21 @@
   <body>
     <header class="header">
       <nav class="container flex flex-jc-sb flex-ai-c">
-        <a href="/" class="header__logo">
-          <img src="images/logo.svg" alt="Shortly Logo" />
-        </a>
+        <div class="flex flex-row flex-jc-sb flex-ai-c">
+          <a href="/" class="header__logo">
+            <img src="images/logo.svg" alt="Shortly Logo" />
+          </a>
+          <div class="header__links hide-for-mobile">
+            <a class="header__item" href="#">Features</a>
+            <a class="header__item" href="#">Pricing</a>
+            <a class="header__item" href="#">Resources</a>
+          </div>
+        </div>
+        
+        <div class="header__links hide-for-mobile">
+          <a href="#" class="header__item"> Login </a>
+          <a href="#" class="button header__cta rounded-button"> Sign Up </a>
+        </div>
 
         <a id="btnHamburger" class="header__toggle hide-for-desktop">
           <span></span>
@@ -52,16 +64,6 @@
           <span></span>
         </a>
 
-        <div class="header__links hide-for-mobile">
-          <a href="#">Features</a>
-          <a href="#">Pricing</a>
-          <a href="#">Resources</a>
-        </div>
-
-        <div class="header__links hide-for-mobile">
-          <a href="#" class="button"> Login </a>
-          <a href="#" class="button header__cta"> Sign Up </a>
-        </div>
       </nav>
     </header>
 
@@ -81,7 +83,7 @@
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
             </p>
-            <button class="button hero__cta">Get Started</button>
+            <button class="button rounded-button">Get Started</button>
           </div>
         </div>
       </section>
@@ -90,23 +92,23 @@
         <div class="container">
           <div class="card card--purple">
             <form class="card__form" novalidate>
-              <div class="">
+              <div class="input">
                 <input
                   type="url"
                   id="shorten"
                   name="shorten"
                   placeholder="Shorten a link here..."
                   required
-                /><br /><br />
+                /> 
               </div>
-              <div class="">
-                <button type="submit" class="button">Shorten It!</button>
+              <div class="submit">
+                <button type="submit" id="submitBtn" class="button">Shorten It!</button>
               </div>
             </form>
           </div>
 
           <div class="result">
-            <div class="card card__result">
+            <div class="card card__result flex flex-col">
               <div class="card__heading">
                 <p class="overflow-ellipsis">
                   https://www.youtube.com/aaaaaaaaaaaaaaaaaaaaa
@@ -120,7 +122,7 @@
             </div>
           </div>
 
-          <div class="feature__heading">
+          <div class="feature__heading flex flex-col flex-ai-c flex-jc-c">
             <h2>Advanced Statistics</h2>
             <p>
               Track how your links are performing across the web with our

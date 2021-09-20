@@ -5,8 +5,14 @@
     input {
         width: 100%;
         padding: .5em;
+        margin-bottom: 1rem;
 
         @include rounded-corner(4px);
+
+
+        @include mq(small) {
+            margin-bottom: 0;
+        }
     }
 
     

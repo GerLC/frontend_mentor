@@ -20,11 +20,11 @@ h1 {
 
 a {
   color: var(--clr-primary-400);
+  text-decoration: none; 
 
   &:hover,
   &:focus {
     color: var(--clr-primary-500);
-    text-decoration: none; 
   }
 }
 
