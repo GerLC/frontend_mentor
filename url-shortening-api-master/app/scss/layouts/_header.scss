@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .header {
     position: relative;
     z-index: 1;  
@@ -74,6 +76,46 @@
         }
     }
 
+
+    // Menu
+    &__menu {
+        position: absolute;
+        width: calc(100% - 3rem);
+        left: 50%;
+        transform: translateX(-50%);
+        background: hsl(var(--clr-primary-violet));
+        margin-top: 1.5rem;
+        padding: 1.625rem;
+        border-radius: 5px;
+
+        @include mq(small) {
+            max-width: calc(50% - 3rem);
+        }
+    
+        a {
+          display: block;
+          padding: 0.7rem;
+          color: #fff;
+          text-align: center;
+        }
+
+        hr {
+            opacity: .2;
+            margin: 1rem 0;
+        }
+    }
+
+    .has-fade {
+        visibility: hidden;
+    }
+
+    .fade-in {
+        animation: fade-in 200ms ease-in-out forwards;
+    }
+
+    .fade-out {
+        animation: fade-out 200ms ease-in-out forwards;
+    }
 }  
     
     

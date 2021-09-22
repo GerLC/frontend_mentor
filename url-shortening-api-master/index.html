@@ -65,6 +65,16 @@
         </a>
 
       </nav>
+
+      <div class="header__menu has-fade hide-for-desktop">
+        <a href="">Features</a>
+        <a href="">Pricing</a>
+        <a href="">Resources</a>
+        <hr>
+        <a href=""> Login </a>
+        <a href="" class="button header__cta rounded-button"> Sign Up </a>
+      </div>
+
     </header>
 
     <main class="main">
@@ -100,15 +110,16 @@
                   placeholder="Shorten a link here..."
                   required
                 /> 
+                <small></small>
               </div>
               <div class="submit">
-                <button type="submit" id="submitBtn" class="button">Shorten It!</button>
+                <button type="submit" id="submitBtn" class="button"></button>
               </div>
             </form>
           </div>
 
           <div class="result">
-            <div class="card card__result flex flex-col">
+            <!-- <div class="card card__result flex flex-col">
               <div class="card__heading">
                 <p class="overflow-ellipsis">
                   https://www.youtube.com/aaaaaaaaaaaaaaaaaaaaa
@@ -117,9 +128,9 @@
               <div class="card__divider"></div>
               <div class="card__content">
                 <a>https://www.youtube.com/</a>
-                <button class="button">Copy</button>
+                <button class="button" id="buttonCopy"></button>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="feature__heading flex flex-col flex-ai-c flex-jc-c">

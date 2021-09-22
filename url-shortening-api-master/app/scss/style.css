@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --clr-primary-cyan: 180 66% 49%;
   --clr-primary-violet: 257 27% 26%;
@@ -183,12 +184,63 @@ li:not([class]) {
   margin: 0 auto;
 }
 
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
 .button {
   padding: 0.6em 2em;
   outline: none;
   border: none;
   background: hsl(var(--clr-primary-cyan));
   cursor: pointer;
+  transition: all 0.25s ease;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -196,6 +248,9 @@ li:not([class]) {
 .button:hover {
   filter: brightness(101%);
   opacity: 0.7;
+}
+.button:active {
+  transform: scale(0.95);
 }
 
 .rounded-button {
@@ -216,6 +271,7 @@ li:not([class]) {
   padding: 0;
   margin: 1.5rem 0;
   text-align: initial;
+  animation: pop 0.5s ease-in-out 1;
 }
 .card__heading {
   padding: 0.7rem;
@@ -234,11 +290,51 @@ li:not([class]) {
   margin-top: 0.7rem;
   padding: 0.4em 2em;
 }
+.card__content button:after {
+  content: "Copy";
+}
+.card__content .validate-copy {
+  background-color: hsl(var(--clr-primary-violet));
+}
+.card__content .validate-copy:after {
+  content: "Copied!";
+}
 .card--purple {
   background: url(../../images/bg-shorten-mobile.svg) 200% -25% no-repeat, hsl(var(--clr-primary-violet));
   background-size: auto;
 }
-@media only screen and (min-width: 40em) {
+.card--purple button:active {
+  letter-spacing: 1px;
+}
+.card--purple button:after {
+  content: "Shorten It!";
+}
+.card--purple .onclic {
+  width: 40px !important;
+  height: 40px;
+  border-radius: 50px;
+  border: 3px solid hsl(var(--clr-neutral-lightgray));
+  border-left-color: hsl(var(--clr-primary-cyan));
+  background-color: transparent;
+  font-size: 0;
+  animation: rotating 2s 0.25s linear infinite;
+}
+.card--purple .onclic:after {
+  content: "";
+}
+.card--purple .onclic:hover {
+  color: hsl(var(--clr-primary-cyan));
+  background: #fff;
+}
+.card--purple .validate {
+  font-size: 13px;
+  color: #fff;
+  background: hsl(var(--clr-primary-cyan));
+}
+.card--purple .validate:after {
+  content: "✓";
+}
+@media only screen and (min-width: 60.2em) {
   .card__result {
     width: 100%;
     flex-flow: row;
@@ -261,9 +357,11 @@ li:not([class]) {
     margin-top: 0;
     margin-left: 1em;
     padding: 0.4em 1.5em;
+    min-width: 7rem;
+    max-width: min-content;
   }
   .card--purple {
-    padding: 2rem;
+    padding: 3rem;
     background: url(../../images/bg-shorten-desktop.svg) no-repeat, hsl(var(--clr-primary-violet));
     background-size: auto;
   }
@@ -280,19 +378,60 @@ li:not([class]) {
   .card__form .submit {
     width: 20%;
   }
+  .card__form #submitBtn {
+    padding: 0.8em 2em;
+  }
 }
 
 .card__form input {
   width: 100%;
-  padding: 0.5em;
+  padding: 0.8em 1.2em;
   margin-bottom: 1rem;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+  border: none;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+.card__form input::placeholder {
+  opacity: 0.5;
+}
+.card__form input:focus {
+  box-shadow: 0 0 0 1px #838383;
+  outline: 3px hsl(var(--clr-primary-violet));
+}
+.card__form input:invalid:not(:focus):not(:placeholder-shown) {
+  color: hsl(var(--clr-secondary-red));
+  border: 1px solid hsl(var(--clr-secondary-red));
+}
+.card__form input:invalid:not(:placeholder-shown) {
+  border: 1px solid hsl(var(--clr-secondary-red));
+}
+.card__form .input {
+  position: relative;
+}
+.card__form .input small {
+  color: hsl(var(--clr-secondary-red));
+  position: relative;
+  top: -10px;
+  visibility: hidden;
+}
+.card__form .input.error small {
+  visibility: visible;
+}
+.card__form .input.error input::placeholder {
+  color: hsl(var(--clr-secondary-red));
+}
+.card__form .input.error input {
+  border: 1px solid hsl(var(--clr-secondary-red));
 }
 @media only screen and (min-width: 40em) {
   .card__form input {
     margin-bottom: 0;
+  }
+  .card__form .input small {
+    position: absolute;
+    top: 120%;
+    left: 0;
   }
 }
 
@@ -346,6 +485,40 @@ li:not([class]) {
 .header.open .header__toggle > span:last-child {
   transform: rotate(-45deg);
 }
+.header__menu {
+  position: absolute;
+  width: calc(100% - 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: hsl(var(--clr-primary-violet));
+  margin-top: 1.5rem;
+  padding: 1.625rem;
+  border-radius: 5px;
+}
+@media only screen and (min-width: 40em) {
+  .header__menu {
+    max-width: calc(50% - 3rem);
+  }
+}
+.header__menu a {
+  display: block;
+  padding: 0.7rem;
+  color: #fff;
+  text-align: center;
+}
+.header__menu hr {
+  opacity: 0.2;
+  margin: 1rem 0;
+}
+.header .has-fade {
+  visibility: hidden;
+}
+.header .fade-in {
+  animation: fade-in 200ms ease-in-out forwards;
+}
+.header .fade-out {
+  animation: fade-out 200ms ease-in-out forwards;
+}
 
 .hero .container {
   padding: 0;
@@ -381,6 +554,11 @@ li:not([class]) {
   .hero__text :is(p) {
     padding-right: 6em;
   }
+  .hero__text :is(h1) {
+    font-size: var(--fs-600);
+  }
+}
+@media only screen and (min-width: 60.2em) {
   .hero__text :is(h1) {
     font-size: var(--fs-700);
   }
@@ -436,7 +614,7 @@ li:not([class]) {
   display: block;
   height: auto;
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60.2em) {
   .feature__heading p {
     max-width: 50ch;
   }
@@ -550,7 +728,7 @@ li:not([class]) {
 .footer__social i:hover {
   color: hsl(var(--clr-primary-cyan));
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60.2em) {
   .footer {
     padding-block: 4rem;
     min-height: max-content;

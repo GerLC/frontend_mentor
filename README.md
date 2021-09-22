@@ -25,6 +25,11 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 | HTML--CSS--JS   | social-media-dashboard-with-theme-switcher-master | [Live](https://gerlc.github.io/frontend_mentor/social-media-dashboard-with-theme-switcher-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/social-media-dashboard-with-theme-switcher-master) |Free|
 | HTML--CSS--JS   | fylo-dark-theme-landing-page-master | [Live](https://gerlc.github.io/frontend_mentor/fylo-dark-theme-landing-page-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/fylo-dark-theme-landing-page-master) |Free|
 
+### Intermediate
+| Tags  | Challanges | Live|  Code|  Type| 
+| --- | :---: |  -- | --  |  -- |
+| HTML--CSS--JS   | url-shortening-api-master | [Live](https://gerlc.github.io/frontend_mentor/url-shortening-api-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/url-shortening-api-master) |Free|
+
 ### Advance
 
 | Tags  | Challanges | Live|  Code|  Type| 

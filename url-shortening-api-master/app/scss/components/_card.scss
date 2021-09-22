@@ -12,6 +12,9 @@
         padding: 0;
         margin: 1.5rem 0;
         text-align: initial;
+
+        animation: pop .5s ease-in-out 1;
+
     }
 
     &__heading {
@@ -32,7 +35,20 @@
         button {
             margin-top: .7rem;
             padding: .4em 2em;
+
+            &:after {
+                content: "Copy";
+            }
         }
+
+        .validate-copy {
+            background-color: hsl(var(--clr-primary-violet));
+
+            &:after {
+                content: "Copied!";
+            }
+        }
+
     }
 
 
@@ -40,10 +56,60 @@
     &--purple {
         background: url(../../images/bg-shorten-mobile.svg) 200% -25% no-repeat, hsl(var(--clr-primary-violet));
         background-size: auto;
+
+        button {
+            
+            &:active {
+                letter-spacing: 1px;
+            }
+
+            &:after {
+                content: "Shorten It!";
+            }
+
+        }
+
+
+        .onclic {
+            width: 40px !important;
+            height: 40px;
+
+            border-radius: 50px;
+            border: 3px solid  hsl(var(--clr-neutral-lightgray));
+            border-left-color: hsl(var(--clr-primary-cyan));
+
+            background-color: transparent;
+
+            font-size: 0;
+
+            animation: rotating 2s 0.25s linear infinite;
+          
+            &:after {
+              content: "";
+            }
+
+            &:hover {
+              color:  hsl(var(--clr-primary-cyan));
+              background: #fff;
+            }
+        }
+
+        .validate {
+            font-size: 13px;
+            color: #fff;
+            background: hsl(var(--clr-primary-cyan));;
+
+            &:after {
+                // content: "\f00c";
+                content: "\2713";
+            }
+          }
+          
+
     }
     
 
-    @include mq(small) { 
+    @include mq(medium) { 
 
         // Shorten Result(s)
         &__result {
@@ -71,12 +137,14 @@
                 margin-top: 0;
                 margin-left: 1em;
                 padding: .4em 1.5em;
+                min-width: 7rem;
+                max-width: min-content;
             }
         }
 
         // Shorten Form
         &--purple {
-            padding: 2rem;
+            padding: 3rem;
             background: url(../../images/bg-shorten-desktop.svg) no-repeat, hsl(var(--clr-primary-violet));
             background-size: auto;
         }
@@ -95,6 +163,10 @@
 
             .submit {
                 width: 20%;
+            }
+            
+            #submitBtn {
+                padding: .8em 2em;
             }
         }
 

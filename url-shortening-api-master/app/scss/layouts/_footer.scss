@@ -57,7 +57,7 @@
     }
 
 
-    @include mq(small) {
+    @include mq(medium) {
         padding-block: 4rem;
         min-height: max-content;
 

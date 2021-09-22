@@ -51,8 +51,21 @@
             }
 
             :is(h1) {
-                font-size: var(--fs-700);
+                font-size: var(--fs-600);
             }
         }
     }
 }    
+
+@include mq(medium) {
+
+    .hero {
+
+        &__text {
+ 
+            :is(h1) {
+                font-size: var(--fs-700);
+            }
+        }
+    }
+}

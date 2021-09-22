@@ -9,11 +9,17 @@
 
     cursor: pointer;
 
+    transition: all 0.25s ease;
+
     @include rounded-corner(4px);
 
     &:hover {
         filter: brightness(101%);
         opacity: .7;
+    }
+
+    &:active {
+        transform: scale(0.95);
     }
 
 }
