@@ -14,6 +14,8 @@ const shortenInput = document.querySelector('#shorten');
 const resultWrapper = document.querySelector('.result');
 const fadeElems = document.querySelectorAll('.has-fade');
 
+let linksSaved = getItems();
+
 // ------------------------------------------------------- //
 //                      HELPER FUNCTIONS                   //
 // ------------------------------------------------------- //
@@ -40,7 +42,7 @@ const appendDiv = (url, shortUrl) => {
 	cardDiv.classList = 'card card__result flex flex-col';
 	cardDiv.innerHTML = `
   <div class="card__heading">
-    <p class="overflow-ellipsis">
+    <p class="overflow-ellipsis" onclick='copyClip(event)'>
       ${url}
     </p>
   </div>
@@ -137,6 +139,8 @@ async function getShortenLink(url) {
     console.log(shortLink);
     appendDiv(url, shortLink);
     success();
+    linksSaved.push(url);
+    storeLink();
 
   } catch (err) {
     error();
@@ -167,15 +171,27 @@ function copyClip(event) {
   // copyText.select();
   navigator.clipboard.writeText(copyText.innerText);
   successCopy(copyBtn);
-
 }
 
+
+function getLinks() {
+  linksSaved.forEach(x => {
+    console.log(x)
+    getShortenLink(x);
+  })
+}
 
 // ------------------------------------------------------- //
 //                   WebStorage FUNCTIONS                  //
 // ------------------------------------------------------- //
 
-sessionStorage.setItem('key', 'value');
+const storeLink = () => {
+  sessionStorage.setItem("links", JSON.stringify(linksSaved));
+}
+
+function getItems() {
+  return JSON.parse(sessionStorage.getItem("links") || "[]");
+}
 
 
 // ------------------------------------------------------- //
@@ -183,3 +199,11 @@ sessionStorage.setItem('key', 'value');
 // ------------------------------------------------------- //
 btnHamburger.addEventListener('click', openBtn);
 submitBtn.addEventListener('click', buttonClick);
+
+
+
+// ------------------------------------------------------- //
+//                       Start App                         //
+// ------------------------------------------------------- //
+
+getLinks();
