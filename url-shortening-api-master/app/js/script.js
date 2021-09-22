@@ -36,6 +36,13 @@ const fadeElements = () => {
 
 }
 
+
+const resetForm = () => {
+  const inputForm = document.querySelector('.card__form');
+  inputForm.reset();
+}
+
+
 // Append
 const appendDiv = (url, shortUrl) => {
   let cardDiv = document.createElement('div');
@@ -99,12 +106,16 @@ const animateShortBtn = () => {
 const success = () => {
 
   setTimeout(() => {
+    document.querySelector('.input').classList.add('success');
+
     submitBtn.classList.remove('onclic');
     submitBtn.classList.add('validate');
   }, 500)
 
   setTimeout(() => {
+    document.querySelector('.input').classList.remove('success');
     submitBtn.classList.remove('validate');
+    resetForm();
   }, 1000)
 
 }
@@ -112,7 +123,7 @@ const success = () => {
 const error = () => {
   setTimeout(() => {
     submitBtn.classList.remove('onclic');
-  }, 2250)
+  }, 2000)
 }
 
 
@@ -123,10 +134,23 @@ const successCopy = (e) => {
     e.classList.remove('validate-copy');
   }, 1000)
 
-
 }
 
-  
+
+// Load Links in Storage on Refresh
+async function shortenLinkOnLoadStorage(url) {
+  try {
+    const response = await fetch(`${urlApi}${url}`);
+    const data = await response.json();
+    let shortLink = data.result.short_link;
+    appendDiv(url, shortLink);
+  } catch (err) {
+    error();
+    setErrorFor(shorten, 'Please provide a valid link');
+    console.log(err);
+  }
+}
+
 // ------------------------------------------------------- //
 //                      MAIN FUNCTIONS                     //
 // ------------------------------------------------------- //
@@ -138,8 +162,8 @@ async function getShortenLink(url) {
     let shortLink = data.result.short_link;
     console.log(shortLink);
     appendDiv(url, shortLink);
-    success();
     linksSaved.push(url);
+    success();
     storeLink();
 
   } catch (err) {
@@ -166,7 +190,7 @@ function copyClip(event) {
   const copyText = parent.querySelector('#copy');
   const copyBtn = parent.querySelector('#buttonCopy');
 
-  console.log(parent, copyText, copyText.innerText);
+  // console.log(parent, copyText, copyText.innerText);
 
   // copyText.select();
   navigator.clipboard.writeText(copyText.innerText);
@@ -177,7 +201,7 @@ function copyClip(event) {
 function getLinks() {
   linksSaved.forEach(x => {
     console.log(x)
-    getShortenLink(x);
+    shortenLinkOnLoadStorage(x);
   })
 }
 
