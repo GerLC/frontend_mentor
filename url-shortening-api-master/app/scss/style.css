@@ -111,6 +111,7 @@ h1 {
 }
 
 a {
+  color: var(--clr-primary-400);
   text-decoration: none;
 }
 p:not([class]),
@@ -387,6 +388,7 @@ li:not([class]) {
   padding: 0.8em 1.2em;
   margin-bottom: 1rem;
   border: none;
+  transition: all 0.5s;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -422,6 +424,10 @@ li:not([class]) {
 }
 .card__form .input.error input {
   border: 1px solid hsl(var(--clr-secondary-red));
+}
+.card__form .input.success input {
+  color: hsl(var(--clr-primary-cyan));
+  border: 1px solid hsl(var(--clr-primary-cyan));
 }
 @media only screen and (min-width: 60.2em) {
   .card__form input {
