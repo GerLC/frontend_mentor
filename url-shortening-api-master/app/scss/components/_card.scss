@@ -58,6 +58,10 @@
         background-size: auto;
 
         button {
+
+            &:hover {
+                opacity: 1;
+            }
             
             &:active {
                 letter-spacing: 1px;

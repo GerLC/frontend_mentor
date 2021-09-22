@@ -47,7 +47,7 @@ const appendDiv = (url, shortUrl) => {
   <div class="card__divider"></div>
   <div class="card__content">
     <a href='https://${shortUrl}' target='_blank' id='copy'>${shortUrl}</a>
-    <button class="button" id='buttonCopy' onclick='copyClip(event)'></button>
+    <button aria-label="Copy!" class="button" id='buttonCopy' onclick='copyClip(event)'></button>
   </div>`;
 
   resultWrapper.appendChild(cardDiv);
@@ -135,7 +135,7 @@ async function getShortenLink(url) {
     const data = await response.json();
     let shortLink = data.result.short_link;
     console.log(shortLink);
-    appendDiv(url, shortLink)
+    appendDiv(url, shortLink);
     success();
 
   } catch (err) {

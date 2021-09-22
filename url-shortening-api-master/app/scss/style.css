@@ -36,6 +36,7 @@
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
 ul[role=list],
 ol[role=list] {
   list-style: none;
@@ -110,13 +111,8 @@ h1 {
 }
 
 a {
-  color: var(--clr-primary-400);
   text-decoration: none;
 }
-a:hover, a:focus {
-  color: var(--clr-primary-500);
-}
-
 p:not([class]),
 ul:not([class]),
 li:not([class]) {
@@ -303,6 +299,9 @@ li:not([class]) {
   background: url(../../images/bg-shorten-mobile.svg) 200% -25% no-repeat, hsl(var(--clr-primary-violet));
   background-size: auto;
 }
+.card--purple button:hover {
+  opacity: 1;
+}
 .card--purple button:active {
   letter-spacing: 1px;
 }
@@ -424,7 +423,7 @@ li:not([class]) {
 .card__form .input.error input {
   border: 1px solid hsl(var(--clr-secondary-red));
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60.2em) {
   .card__form input {
     margin-bottom: 0;
   }
@@ -497,7 +496,7 @@ li:not([class]) {
 }
 @media only screen and (min-width: 40em) {
   .header__menu {
-    max-width: calc(50% - 3rem);
+    max-width: calc(65% - 3rem);
   }
 }
 .header__menu a {

@@ -57,7 +57,7 @@
     }
 
 
-    @include mq(small) {
+    @include mq(medium) {
         input {
             margin-bottom: 0;
         }
