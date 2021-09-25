@@ -50,7 +50,10 @@ body {
     text-align: center;
     text-transform: uppercase;
     
-    background: url(../../images/pattern-hills.svg) bottom no-repeat, url(../../images/bg-stars.svg) no-repeat, var(--clr-neutral-dark-blue);
+    background: url(../../images/pattern-hills.svg) bottom no-repeat, 
+    url(../../images/bg-stars.svg) no-repeat, 
+    radial-gradient(ellipse at top, var(--clr-neutral-desa-blue), var(--clr-neutral-dark-blue)),
+    radial-gradient(ellipse at bottom, var(--clr-neutral-dark-blue), var(--clr-neutral-desa-blue));
 }
 
 
@@ -138,7 +141,9 @@ body {
 @media (max-width: 550px) {
     
     body {
-        background: url(../../images/pattern-hills.svg) 80% 110% / 75rem no-repeat, url(../../images/bg-stars.svg) no-repeat, var(--clr-neutral-dark-blue);
+        background: url(../../images/pattern-hills.svg) 80% 110% / 75rem no-repeat,
+        url(../../images/bg-stars.svg) no-repeat, 
+        linear-gradient(to bottom, var(--clr-neutral-desa-blue), var(--clr-neutral-dark-blue));
     }
 
     .title {
@@ -153,7 +158,10 @@ body {
 
 @media (max-width: 768px) {
     body {
-        background: url(../../images/pattern-hills.svg) 80% 110% / 75rem no-repeat, url(../../images/bg-stars.svg) no-repeat, var(--clr-neutral-dark-blue);
+        background: url(../../images/pattern-hills.svg) 80% 110% / 75rem no-repeat, 
+        url(../../images/bg-stars.svg) no-repeat,
+        radial-gradient(ellipse at top, var(--clr-neutral-desa-blue), var(--clr-neutral-dark-blue)),
+        radial-gradient(ellipse at bottom, var(--clr-neutral-dark-blue), var(--clr-neutral-desa-blue));;
     }
 
     .title {
