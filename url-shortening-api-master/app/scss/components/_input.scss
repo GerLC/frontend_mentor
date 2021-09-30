@@ -32,6 +32,10 @@
 
     }
 
+    .shake {
+        animation: shake .5s ease-in-out 1;
+    }
+
     .input {
         position: relative;
 

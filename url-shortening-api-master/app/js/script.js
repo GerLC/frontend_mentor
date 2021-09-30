@@ -88,7 +88,12 @@ function setErrorFor(input, message) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');
 	formControl.classList.add('error');
+  formControl.classList.add('shake');
 	small.innerText = message;
+
+  setTimeout(() => {
+    formControl.classList.remove('shake');
+  }, 1000)
 }
 
 function isValidURL(url) {

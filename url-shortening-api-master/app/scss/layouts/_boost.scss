@@ -5,7 +5,7 @@
     height: 15rem;
     max-height: 20rem;
 
-    background: url(../../images/bg-boost-mobile.svg) no-repeat, hsl(var(--clr-primary-violet));
+    background: url(../../images/bg-boost-mobile.svg), hsl(var(--clr-primary-violet));
     background-size: cover;
 
     h2 {
