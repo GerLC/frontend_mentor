@@ -203,6 +203,18 @@ li:not([class]) {
     opacity: 1;
   }
 }
+@keyframes pop-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    margin: 0;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    max-height: 0;
+  }
+}
 @keyframes shake {
   0% {
     transform: translate(1px, 1px) rotate(0deg);
@@ -303,11 +315,18 @@ li:not([class]) {
   padding: 0;
   margin: 1.5rem 0;
   text-align: initial;
+  perspective: 100px;
+  transition: all 0.5s ease-in;
   animation: pop 0.5s ease-in-out 1;
 }
 .card__heading {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.7rem;
   color: hsl(var(--clr-primary-violet));
+  transition: all 0.2s ease-in;
 }
 .card__divider {
   width: 100%;
@@ -330,6 +349,10 @@ li:not([class]) {
 }
 .card__content .validate-copy:after {
   content: "Copied!";
+}
+.card.removed {
+  max-height: 20rem;
+  animation: pop-out 1s cubic-bezier(0.36, -0.64, 0.34, 1.76) 0.1s 1 forwards;
 }
 .card--purple {
   background: url(../../images/bg-shorten-mobile.svg) 200% -25% no-repeat, hsl(var(--clr-primary-violet));
@@ -377,7 +400,13 @@ li:not([class]) {
     align-items: center;
   }
   .card__heading {
+    width: 100%;
     max-width: 65%;
+  }
+  .card__heading:hover .icon {
+    animation: pop 0.3s ease-in-out 1;
+    opacity: 1;
+    visibility: visible;
   }
   .card__divider {
     display: none;
@@ -478,6 +507,35 @@ li:not([class]) {
   }
 }
 
+.icon {
+  width: 3rem;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.icon path {
+  fill: hsl(var(--clr-secondary-red));
+  stroke: hsl(var(--clr-secondary-red));
+  transition: all 0.2s ease-in;
+}
+.icon.trash:hover #ecUvfY3VaWr3 {
+  transform: translateY(-10px);
+}
+
+@media only screen and (min-width: 40em) {
+  .icon {
+    width: 1.2rem;
+  }
+}
+@media only screen and (min-width: 60.2em) {
+  .icon {
+    width: 1.6rem;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
 .header {
   position: relative;
   z-index: 1;

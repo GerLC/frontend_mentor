@@ -1,0 +1,38 @@
+@use '../abstracts/' as *;
+
+.icon {
+    width: 3rem;
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+
+    cursor: pointer;
+    transition: all .2s ease-in;
+
+    path {
+        fill: hsl(var(--clr-secondary-red));
+        // stroke-width: 10;
+        stroke: hsl(var(--clr-secondary-red));
+        transition: all .2s ease-in;
+    }
+
+
+    &.trash:hover #ecUvfY3VaWr3 {
+        transform: translateY(-10px);
+    }
+}
+
+@include mq(small) {
+    .icon {
+        width: 1.2rem;
+    }
+}
+
+
+@include mq(medium) {
+    .icon {
+        width: 1.6rem;
+        visibility: hidden;
+        opacity: 0;
+    }
+}
