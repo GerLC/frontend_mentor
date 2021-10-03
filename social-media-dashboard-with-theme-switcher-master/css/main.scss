@@ -31,6 +31,10 @@
 
 html {
     font-size: 62.5%;
+
+    @media only screen and (min-width: 1400px) {
+        font-size: 80%;
+    }
 }
 
 *,
@@ -90,7 +94,7 @@ p {
 
         @media only screen and (min-width: 600px) {
             margin-right: 1rem;
-            font-size: 1rem;
+            font-size: 1.25rem;
         }
     }
 
@@ -134,7 +138,9 @@ p {
 
 
 .main-content {
-    background: var(--bg-color);
+    // background: var(--bg-color);
+    background: linear-gradient(var(--bg-pattern-color) 25%, var(--bg-color) 25%);
+
     padding: 3rem 2rem;
     padding-bottom: 8rem;
     transition: all .5s;
@@ -143,6 +149,11 @@ p {
     @media only screen and (min-width: 1024px) {
         padding-left: 10rem;
         padding-right: 10rem;
+    }
+
+    @media only screen and (min-width: 1400px) {
+        padding-left: 15rem;
+        padding-right: 15rem;
     }
 
 }
