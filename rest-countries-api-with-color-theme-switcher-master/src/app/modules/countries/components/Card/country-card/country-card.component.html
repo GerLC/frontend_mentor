@@ -1,6 +1,6 @@
 <ng-container *ngIf="country">
     <mat-card class="card" [routerLink]="[country.alpha3Code]">
-        <img mat-card-image src="{{country.flag}}" alt="Flag of {{country.name}}">
+        <img mat-card-image src="{{country.flags.png}}" alt="Flag of {{country.name}}">
         <mat-card-content class="card__content">
             <h3>{{country.name}}</h3>
             <p><strong>Population:</strong> {{country.population}}</p>

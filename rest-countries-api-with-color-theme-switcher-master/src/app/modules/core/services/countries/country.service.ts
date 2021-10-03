@@ -6,7 +6,7 @@ import { catchError, retry, tap } from 'rxjs/operators';
 @Injectable()
 export class CountryService {
 
-  private readonly countryUrl = 'https://restcountries.eu/rest/v2';
+  private readonly countryUrl = 'https://restcountries.com/v2';
 
   constructor(
     private httpClient: HttpClient,
@@ -17,7 +17,7 @@ export class CountryService {
    * Get all the countries.
    */
   getCountries(): Observable<any> {
-    return this.httpClient.get<any[]>(this.countryUrl + '/all' + '/?fields=name;flag;population;region;capital;alpha3Code;').pipe(
+    return this.httpClient.get<any[]>(this.countryUrl + '/all' + '?fields=name,flags,population,region,capital,alpha3Code').pipe(
       retry(2),
       tap(_ => this.log(`get all countries info`)),
       catchError(this.handleError<any>('getCountries'))
@@ -30,7 +30,7 @@ export class CountryService {
    * @param code - Country code
    */
   searchByName(code: String): Observable<any> {
-    return this.httpClient.get<any>(`${this.countryUrl}/alpha/${code}?fields=alpha3Code;name;nativeName;population;region;subregion;capital;topLevelDomain;currencies;languages;borders;flag;`).pipe(
+    return this.httpClient.get<any>(`${this.countryUrl}/alpha/${code}?fields=alpha3Code,name,nativeName,population,region,subregion,capital,topLevelDomain,currencies,languages,borders,flags`).pipe(
       retry(2),
       tap(_ => this.log(`Get a country info by his full name`)),
       catchError(this.handleError<any>('searchByName'))
@@ -57,7 +57,7 @@ export class CountryService {
    * @param region - Existing regions 
    */
   searchByRegion(region: String): Observable<any> {
-    return this.httpClient.get<any[]>(`${this.countryUrl}/region/${region}?fields=alpha3Code;name;flag;population;region;capital;`).pipe(
+    return this.httpClient.get<any[]>(`${this.countryUrl}/region/${region}?fields=alpha3Code,name,flags,population,region,capital`).pipe(
       retry(2),
       tap(_ => this.log(`filter a countries by region`)),
       catchError(this.handleError<any>('searchByRegion'))

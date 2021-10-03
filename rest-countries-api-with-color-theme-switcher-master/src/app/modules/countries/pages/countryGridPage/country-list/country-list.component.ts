@@ -63,6 +63,8 @@ export class CountryListComponent implements OnInit {
     this.countryService.getCountries().subscribe((data) => {
       if (!filter) {
         this.countries = data;
+        console.log(this.countries)
+
       }
       
       if (filter) {
