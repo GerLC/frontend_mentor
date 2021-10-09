@@ -15,6 +15,7 @@ $light-grayish-blue: hsl(210, 46%, 95%);
 // Breakpoints
 $media_queries : (
     'mobile'    : unquote("only screen and (max-width: 375px)"),
+    'tablet'   : unquote("only screen and (min-width: 600px) and (max-width: 1020px)"),
     'desktop'   : unquote("only screen and (min-width: 1024px)"),
     'landscape' : unquote("screen and (orientation:landscape)"),    
     'portrait'  : unquote("screen and (orientation:portrait)")
@@ -82,10 +83,15 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, min-content);
     gap: 2rem;
-    max-width: 80rem;
+    max-width: 70rem;
 
     @include for_breakpoint(mobile) {
-        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        grid-template-columns: 1fr;
+    }
+
+    @include for_breakpoint(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, min-content);
     }
 }
 
@@ -111,6 +117,10 @@ main {
             grid-area: 1 / 1 / 3 / 1;
         }
 
+        @include for_breakpoint(tablet) {
+            grid-area: 1 / 1 / 3 / 2;
+        }
+
     }
 
     &--jonathan {
@@ -121,6 +131,10 @@ main {
             grid-area: 3 / 1 / 4 / 1;
         }
 
+        @include for_breakpoint(tablet) {
+            grid-area: 1 / 2 / 2 / 3;
+            // grid-area: 2 / 1 / 3 / 2;
+        }
     }
 
     &--kira {
@@ -131,6 +145,9 @@ main {
             grid-area: 7 / 1 / 9 / 1;
         }
 
+        @include for_breakpoint(tablet) {
+            grid-area: 3 / 1 / 4 / 2;
+        }
     }
 
     &--jeanette {
@@ -141,6 +158,9 @@ main {
             grid-area: 4 / 1 / 5 / 1;
         }
 
+        @include for_breakpoint(tablet) {
+            grid-area: 2 / 2 / 3 / 3;
+        }
     }
 
     &--patrick {
@@ -149,6 +169,10 @@ main {
 
         @include for_breakpoint(mobile) {
             grid-area: 5 / 1 / 7 / 1;
+        }
+
+        @include for_breakpoint(tablet) {
+            grid-area: 3 / 2 / 4 / 3;
         }
 
     }
