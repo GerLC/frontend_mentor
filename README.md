@@ -30,7 +30,7 @@ Collection of my solutions submitted at [frontendmentor.io ](https://www.fronten
 | --- | :---: |  -- | --  |  -- |
 | HTML--CSS--JS   | url-shortening-api-master | [Live](https://gerlc.github.io/frontend_mentor/url-shortening-api-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/url-shortening-api-master) |Free|
 | HTML--CSS--JS   | launch-countdown-timer-main | [Live](https://gerlc.github.io/frontend_mentor/launch-countdown-timer-main) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/launch-countdown-timer-main) |Free|
-| HTML--CSS--JS   | ip-address-tracker-master | [Live](https://gerlc.github.io/frontend_mentor/ip-address-tracker-master) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/ip-address-tracker-master) |Free|
+| HTML--CSS--JS   | ip-address-tracker-master | [Live](https://beamish-belekoy-10b9f0.netlify.app/) | [Code](https://github.com/GerLC/frontend_mentor/tree/main/ip-address-tracker-master) |Free|
 
 
 ### Advance
