@@ -1,30 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
 
 /* Base */
 :root {
-    --clr-primary-grayish-blue: hsl(237, 18%, 59%);
-    --clr-primary-red: hsl(345, 95%, 68%);
-    --clr-neutral-white: hsl(0, 0%, 100%);
-    --clr-neutral-desa-blue: hsl(236, 21%, 26%);
-    --clr-neutral-dark-blue: hsl(235, 16%, 14%);
-    --clr-neutral-black: hsl(234, 17%, 12%);
+  --clr-primary-grayish-blue: hsl(237, 18%, 59%);
+  --clr-primary-red: hsl(345, 95%, 68%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+  --clr-neutral-desa-blue: hsl(236, 21%, 26%);
+  --clr-neutral-dark-blue: hsl(235, 16%, 14%);
+  --clr-neutral-black: hsl(234, 17%, 12%);
 }
-  
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 html:focus-within {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 img,
@@ -33,150 +32,166 @@ picture {
   display: block;
 }
 
-
 body {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 
-    min-height: 100vh;
-    
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-    font-size: 14px;
-    font-family: 'Red Hat Text', sans-serif;
-    color: var(--clr-primary-grayish-blue);
-    letter-spacing: -0.5px;
-    text-align: center;
-    text-transform: uppercase;
-    
-    background: url(../../images/pattern-hills.svg) bottom no-repeat, 
-    url(../../images/bg-stars.svg) no-repeat, 
-    radial-gradient(ellipse at top, var(--clr-neutral-desa-blue), var(--clr-neutral-dark-blue)),
-    radial-gradient(ellipse at bottom, var(--clr-neutral-dark-blue), var(--clr-neutral-desa-blue));
+  min-height: 100vh;
+
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: 14px;
+  font-family: "Red Hat Text", sans-serif;
+  color: var(--clr-primary-grayish-blue);
+  letter-spacing: -0.5px;
+  text-align: center;
+  text-transform: uppercase;
+
+  background: url(../../images/pattern-hills.svg) bottom no-repeat,
+    url(../../images/bg-stars.svg) no-repeat,
+    radial-gradient(
+      ellipse at top,
+      var(--clr-neutral-desa-blue),
+      var(--clr-neutral-dark-blue)
+    ),
+    radial-gradient(
+      ellipse at bottom,
+      var(--clr-neutral-dark-blue),
+      var(--clr-neutral-desa-blue)
+    );
+  background-size: contain;
 }
-
 
 .container {
-    padding: 0 1.5rem;
-    max-width: 62.5rem;
-    margin: 0 auto;
+  padding: 0 1.5rem;
+  max-width: 62.5rem;
+  margin: 0 auto;
 }
-
 
 /* Main */
 .main .container {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
-
 .title {
-    margin: 6rem 0;
+  margin: 6rem 0;
 }
 
 .title > h1 {
-    font-size: clamp(.8rem, 2.2vw, 2rem);
-    font-weight: 700;
-    font-stretch: 100%;
-    line-height: 1.65;
-    letter-spacing: clamp(0.5rem, 1.25vw, 0.575rem);
-    color: var(--clr-neutral-white);
+  font-size: clamp(0.8rem, 2.2vw, 2rem);
+  font-weight: 700;
+  font-stretch: 100%;
+  line-height: 1.65;
+  letter-spacing: clamp(0.5rem, 1.25vw, 0.575rem);
+  color: var(--clr-neutral-white);
 }
 
 /* Footer */
 .footer {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer__links {
-    width: 100%;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 4rem;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 6rem;
 }
 
 .footer__link {
-    margin: 0 .75rem;
+  margin: 0 1rem;
 }
 
 .footer__link svg > path {
-    transition: fill .5s ease-out;
-    -webkit-transition: fill .5s ease-out;
-}
-  
-.footer__link:hover svg > path {
-    fill: var(--clr-primary-red);
+  transition: fill 0.5s ease-out;
+  -webkit-transition: fill 0.5s ease-out;
 }
 
+.footer__link:hover svg > path {
+  fill: var(--clr-primary-red);
+}
 
 /* Flipdown  */
 .flipdown {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: default;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
 }
 
 .rotor-group-heading::after {
-    content: none !important;
+  content: none !important;
 }
 
 .rotor-group {
-    display: grid;
-    place-items: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 50px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 50px;
+}
+
+.rotor-group:nth-child(1) {
+  grid-template-columns: 1fr 1fr auto;
 }
 
 .rotor-group-heading {
-    grid-area: 2 / 1 / 2 / 3;
+  grid-area: 2 / 1 / 2 / 3;
 }
 
 @media (max-width: 550px) {
-    
-    body {
-        background: url(../../images/pattern-hills.svg) 80% 110% / 75rem no-repeat,
-        url(../../images/bg-stars.svg) no-repeat, 
-        linear-gradient(to bottom, var(--clr-neutral-desa-blue), var(--clr-neutral-dark-blue));
-    }
+  body {
+    background: url(../../images/pattern-hills.svg) 80% 110% / 75rem no-repeat,
+      url(../../images/bg-stars.svg) no-repeat,
+      linear-gradient(
+        to bottom,
+        var(--clr-neutral-desa-blue),
+        var(--clr-neutral-dark-blue)
+      );
+  }
 
-    .title {
-        margin: 6rem 0 4rem;
-    }
+  .title {
+    margin: 6rem 0 4rem;
+  }
 
-    .footer__links {
-        margin-bottom: 1rem;
-    }
+  .footer__links {
+    margin-bottom: 1rem;
+  }
 }
 
-
 @media (max-width: 768px) {
-    body {
-        background: url(../../images/pattern-hills.svg) 80% 110% / 75rem no-repeat, 
-        url(../../images/bg-stars.svg) no-repeat,
-        radial-gradient(ellipse at top, var(--clr-neutral-desa-blue), var(--clr-neutral-dark-blue)),
-        radial-gradient(ellipse at bottom, var(--clr-neutral-dark-blue), var(--clr-neutral-desa-blue));;
-    }
+  body {
+    background: url(../../images/pattern-hills.svg) 80% 110% / 75rem no-repeat,
+      url(../../images/bg-stars.svg) no-repeat,
+      radial-gradient(
+        ellipse at top,
+        var(--clr-neutral-desa-blue),
+        var(--clr-neutral-dark-blue)
+      ),
+      radial-gradient(
+        ellipse at bottom,
+        var(--clr-neutral-dark-blue),
+        var(--clr-neutral-desa-blue)
+      );
+  }
 
-    .title {
-        margin: 6rem 0 4rem;
-    }
+  .title {
+    margin: 6rem 0 4rem;
+  }
 
-    .footer__links {
-        margin-bottom: 1rem;
-    }
+  .footer__links {
+    margin-bottom: 1rem;
+  }
 }
 
 @media (min-width: 1440px) {
-
-    .title {
-        margin: 10rem 0;
-    }
-
+  .title {
+    margin: 10rem 0;
+  }
 }
