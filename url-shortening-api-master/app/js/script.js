@@ -1,10 +1,13 @@
-// https://shrtco.de/docs/
+// https://shrtco.de/docs/ (Deprecated)
 // GET/POST: https://api.shrtco.de/v2/shorten?url=example.org/very/long/link.html
+
+// https://cleanuri.com/docs (New third party API)
+// POST https://cleanuri.com/api/v1/shorten?url=https%3A%2F%2Fgoogle.com%2F
 
 // ------------------------------------------------------- //
 //                       Variables                         //
 // ------------------------------------------------------- //
-const urlApi = 'https://api.shrtco.de/v2/shorten?url=';
+const urlApi = 'https://cleanuri.com/api/v1/shorten';
 
 const btnHamburger = document.querySelector('#btnHamburger');
 const header = document.querySelector('.header');
@@ -164,9 +167,13 @@ const removeArrayItem = (item) => {
 // Load Links in Storage on Refresh
 async function shortenLinkOnLoadStorage(url) {
   try {
-    const response = await fetch(`${urlApi}${url}`);
+    const response = await fetch(urlApi, {
+			method: "POST",
+      body: new URLSearchParams({"url": url}),
+      headers: {"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"}
+		});
     const data = await response.json();
-    let shortLink = data.result.short_link;
+    let shortLink = data.result_url;
     appendDiv(url, shortLink);
   } catch (err) {
     error();
@@ -181,9 +188,13 @@ async function shortenLinkOnLoadStorage(url) {
 
 async function getShortenLink(url) {
   try {
-    const response = await fetch(`${urlApi}${url}`);
+    const response = await fetch(urlApi, {
+			method: "POST",
+      body: new URLSearchParams({"url": url}),
+      headers: {"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"}
+		});
     const data = await response.json();
-    let shortLink = data.result.short_link;
+    let shortLink = data.result_url;
     // console.log(shortLink);
     appendDiv(url, shortLink);
     linksSaved.push(url);
