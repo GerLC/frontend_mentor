@@ -19,7 +19,7 @@
 
     @include mq(small) {
         background: url(../../images/bg-boost-desktop.svg) no-repeat, hsl(var(--clr-primary-violet));
-        background-size: cover;
+        background-size: contain;
         
         h2 {
             font-size: var(--fs-500);

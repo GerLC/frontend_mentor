@@ -780,7 +780,7 @@ li:not([class]) {
 @media only screen and (min-width: 40em) {
   .boost {
     background: url(../../images/bg-boost-desktop.svg) no-repeat, hsl(var(--clr-primary-violet));
-    background-size: cover;
+    background-size: contain;
   }
   .boost h2 {
     font-size: var(--fs-500);
